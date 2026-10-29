@@ -1,0 +1,76 @@
+{
+ "slug": "lea",
+ "repo": "VIDA-NYU/Lea",
+ "submodule": "projects/vida-nyu-lea",
+ "sha": "a5924f6f15b980452731b6edfe00feee97791ab4",
+ "members": [
+  "Shaswat Patel",
+  "Daniel Aarão Reis Arturi"
+ ],
+ "authors": "VIDA-NYU (Shaswat Patel, Daniel Aarão Reis Arturi and contributors)",
+ "authorUrl": "https://github.com/VIDA-NYU",
+ "license": {
+  "spdx": null,
+  "name": "No licence file",
+  "file": null
+ },
+ "title": "Lea, explained",
+ "brand": "Lea <em>explained</em>",
+ "h1": "Lea: an AI agent that writes Lean proofs, and the small amount of Lean that ships with it",
+ "lead": "Lea is VIDA-NYU's Lean 4 <strong>theorem-proving agent</strong>, with a web UI and an Overleaf extension. Most of the repository is Python, TypeScript and web tooling, not Lean. Its Lean is about 1,360 lines: a handful of agent-generated sample proofs (propositional soundness, a verified stack-machine compiler, the Ackermann function), demo and test fixtures, and a vendored copy of <strong>SafeVerify</strong>, the checker that re-runs Lean's kernel on a finished proof. One limit matters most: in Lea, SafeVerify's trusted target is built from the submission itself, so it catches cheating proofs but <em>not</em> a weakened statement.",
+ "desc": "An unofficial plain-English tour of Lea, VIDA-NYU's Lean 4 proving agent: what the project is, the sample proofs it ships (soundness, a stack-machine compiler, Ackermann), and how a finished proof is audited by the vendored SafeVerify checker.",
+ "startNote": "<p>Lea is mostly not Lean, so start with <a href=\"#/page/about\">About</a> for what the project does. Then read one sample proof, <a href=\"#/node/compile_correct\">the stack-machine compiler</a> or <a href=\"#/node/soundness\">propositional soundness</a>. Finish with <a href=\"#/node/runMain\">how SafeVerify audits a proof</a> and the two attack fixtures it is tested on (<a href=\"#/node/falseThm\">a fake theorem</a>, <a href=\"#/node/efsq\">a redefined axiom</a>).</p>",
+ "sizeNote": "About 1,360 lines of Lean in 33 files: 205 lines of sample proofs, about 130 lines of demo and test fixtures, 110 lines of inspection tooling, and about 900 lines of vendored SafeVerify with its tests. The rest of the repository (Python agent, React UI, Chrome extension, Node services) is not Lean.",
+ "agentCtx": "Lea (VIDA-NYU): an LLM-driven Lean 4 theorem-proving agent with a web UI and an Overleaf extension. Its Lean content is sample generated proofs, demo fixtures, a declaration inspector and a vendored copy of the SafeVerify proof checker.",
+ "roots": [
+  "apps/lea-standalone/prover/examples",
+  "apps/lea-standalone/prover/third_party/SafeVerify/Main.lean",
+  "apps/lea-standalone/prover/third_party/SafeVerify/SafeVerify",
+  "apps/lea-standalone/prover/third_party/SafeVerify/SafeVerifyTest",
+  "apps/lea-standalone/prover/lea/LibraryInspect.lean",
+  "docs/lea-overleaf-demo/reference",
+  "docs/reformalization-testing-guide/fixtures"
+ ],
+ "ns": "",
+ "headlines": [
+  "soundness",
+  "compile_correct",
+  "ack_mono_and_gt",
+  "ackermann_4_1",
+  "runMain"
+ ],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String"
+ ],
+ "gloss": {
+  "Prop": "The type of logical statements. Formulas are interpreted as Lean propositions.",
+  "String": "Text. Propositional variables are named by strings.",
+  "List": "A finite list. Contexts of assumptions, stacks and programs are lists.",
+  "Nat": "The natural numbers 0, 1, 2, …."
+ },
+ "headlineFiles": [
+  "apps/lea-standalone/prover/examples/Logic.lean",
+  "apps/lea-standalone/prover/examples/StackMachine.lean",
+  "apps/lea-standalone/prover/examples/Ackermann.lean",
+  "apps/lea-standalone/prover/third_party/SafeVerify/Main.lean"
+ ]
+}
