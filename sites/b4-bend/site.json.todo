@@ -1,0 +1,50 @@
+{
+ "slug": "b4-bend",
+ "repo": "tangentstorm/b4",
+ "submodule": "projects/tangentstorm-b4",
+ "sha": "6bf9a57996a8d7ddd9b07adff2e40375e12f0294",
+ "members": [
+  "Michal Wallace"
+ ],
+ "authors": "Michal Wallace",
+ "authorUrl": "https://github.com/tangentstorm/b4",
+ "license": {
+  "spdx": null,
+  "name": "No licence file",
+  "file": null
+ },
+ "title": "TODO",
+ "brand": "TODO",
+ "h1": "TODO",
+ "lead": "TODO",
+ "desc": "TODO",
+ "startNote": "",
+ "sizeNote": "",
+ "agentCtx": "",
+ "roots": [],
+ "ns": "",
+ "headlines": [],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String"
+ ],
+ "ownProject": true
+}

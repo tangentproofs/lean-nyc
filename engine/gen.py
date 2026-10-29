@@ -17,6 +17,9 @@ handling = ("Source reproduced on this site under that licence, with its notice.
             else "So this site reproduces none of its source: it explains in prose and links to the exact lines on GitHub.")
 author = f'<a href="{e(C["authorUrl"])}" target="_blank" rel="noopener">{e(C["authors"])}</a>' if C.get("authorUrl") else e(C["authors"])
 banner = f'''<div class="disclaimer" role="note"><b>Unofficial explainer.</b> This is not official documentation for <a href="{gh}" target="_blank" rel="noopener">{e(repo)}</a>. It was written independently (AI-assisted) from the public source at commit <a href="{gh}/tree/{sha}" target="_blank" rel="noopener"><code>{sha[:7]}</code></a>, and may contain errors. See the original repository by {author}.<span class="lic">Licence: {lic_link}. {handling}</span></div>'''
+own = C.get("ownProject")  # the hub owner's own repo (b4): same banner, worded for a project he wrote and asked to have explained
+if own:
+    banner = f'''<div class="disclaimer" role="note"><b>Unofficial explainer.</b> This is not official documentation for <a href="{gh}" target="_blank" rel="noopener">{e(repo)}</a>. It is an AI-assisted tour of {author}'s own project, written at his request from the public source at commit <a href="{gh}/tree/{sha}" target="_blank" rel="noopener"><code>{sha[:7]}</code></a>. He has not reviewed it line by line, and it may contain errors: the repository is the ground truth.<span class="lic">Licence: {lic_link}. {handling}</span></div>'''
 snap = C.get("snapshot")  # explainer of a public website snapshot rather than a git repository (prove2me)
 if snap:
     gh = snap["url"]; sha = snap["fetched"]
@@ -93,7 +96,7 @@ txt += f'''
 ## Credit, licence and status
 
 - **The project:** [{snap["name"] if snap else repo}]({gh}) by {C["authors"]}{f" ({C['authorUrl']})" if C.get("authorUrl") else ""}. Everything mathematical and every line of Lean is theirs.
-- **This explainer:** unofficial and independent. Written by Claude (AI) {f"from the public site as fetched on {sha}" if snap else f"from the public source at commit [`{sha[:7]}`]({gh}/tree/{sha})"}, scaffolded and checked by Grok Bot for the [Lean NYC member-project index](../). Not reviewed or endorsed by the project's authors, and it may contain errors. Every node is `review: draft`.
+- **This explainer:** unofficial and independent. Written by Claude (AI) {f"from the public site as fetched on {sha}" if snap else f"from the public source at commit [`{sha[:7]}`]({gh}/tree/{sha})"}, scaffolded and checked by Grok Bot for the [Lean NYC member-project index](../). {"Requested by the author, but not reviewed by him line by line" if own else "Not reviewed or endorsed by the project's authors"}, and it may contain errors. Every node is `review: draft`.
 - **Licence:** {f"[{lic['name']}]({lic_url})" if lic_url else lic["name"]}. {handling}
 - **Corrections:** open an issue or pull request on [tangentproofs/lean-nyc](https://github.com/tangentproofs/lean-nyc). Authors who would like this page changed or taken down: say so there and it will be done.
 '''

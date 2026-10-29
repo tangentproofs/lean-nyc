@@ -61,3 +61,6 @@
 [submodule "projects/zetetic-dhruv-formal-learning-theory-kernel"]
 	path = projects/zetetic-dhruv-formal-learning-theory-kernel
 	url = https://github.com/Zetetic-Dhruv/formal-learning-theory-kernel
+[submodule "projects/tangentstorm-b4"]
+	path = projects/tangentstorm-b4
+	url = https://github.com/tangentstorm/b4

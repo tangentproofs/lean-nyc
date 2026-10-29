@@ -447,6 +447,51 @@
    }
   },
   {
+   "slug": "b4-lean",
+   "name": "b4 · Lean",
+   "repo": "tangentstorm/b4",
+   "submodule": "projects/tangentstorm-b4",
+   "sha": "6bf9a57996a8d7ddd9b07adff2e40375e12f0294",
+   "members": [
+    {
+     "name": "Michal Wallace",
+     "profile": "https://tangentproofs.github.io/"
+    }
+   ],
+   "authors": "Michal Wallace",
+   "authorUrl": "https://github.com/tangentstorm/b4",
+   "talk": null,
+   "talkUrl": null,
+   "license": null,
+   "explainer": false,
+   "nodeCount": null,
+   "own": true,
+   "description": "Michal Wallace's own project: the Lean 4 implementation of the b4 virtual machine (imp/lean): interpreter, b4a assembler, machines joined by channels, step lemmas and a total runN, and a heap model for the mm allocator."
+  },
+  {
+   "slug": "b4-bend",
+   "name": "b4 · Bend",
+   "repo": "tangentstorm/b4",
+   "submodule": "projects/tangentstorm-b4",
+   "sha": "6bf9a57996a8d7ddd9b07adff2e40375e12f0294",
+   "members": [
+    {
+     "name": "Michal Wallace",
+     "profile": "https://tangentproofs.github.io/"
+    }
+   ],
+   "authors": "Michal Wallace",
+   "authorUrl": "https://github.com/tangentstorm/b4",
+   "talk": null,
+   "talkUrl": null,
+   "license": null,
+   "explainer": false,
+   "nodeCount": null,
+   "own": true,
+   "description": "Michal Wallace's own project: the b4 virtual machine written in Bend (imp/bend), running 16,384 machines in parallel, with a Mandelbrot demo and a live shell. A code tour.",
+   "kind": "Bend"
+  },
+  {
    "slug": "gromov",
    "repo": "Aaron1011/gromov",
    "submodule": "projects/aaron1011-gromov",

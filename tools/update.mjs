@@ -19,7 +19,7 @@ const also = (p) => projects.filter((q) => q.secondaryOf === p.slug).map((q) => 
 }).join("");
 function card(p) {
   const s = info(p), live = p.explainer && s;
-  const name = p.url ? new URL(p.url).host : p.repo.split("/")[1];
+  const name = p.name || (p.url ? new URL(p.url).host : p.repo.split("/")[1]);
   const hue = [...name].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7) % 6;
   const href = p.tooling ? `https://github.com/${p.repo}` : live ? `${p.slug}/` : p.demo ? p.demo.url : p.url || `https://github.com/${p.repo}`; // stubs link upstream until their explainer is live
   const who = p.members.map((m) => `<a href="${esc(m.profile)}">${esc(m.name)}</a>`).join(" &amp; ");
@@ -40,7 +40,7 @@ function card(p) {
   return `<article class="card inf">
   <a class="thumb ph c${hue}" href="${esc(href)}" aria-label="${esc(name)}"><span class="ph-name">${esc(name)}</span><span class="ph-note">${p.tooling ? "tooling" : live ? `${p.nodeCount ?? ""} explained nodes` : p.demo ? "demo explainer" : p.slug ? "explainer in progress" : p.url ? "project site" : "explainer coming"}</span></a>
   <div class="body">
-    <h3><a href="${esc(href)}">${esc(name)}</a> <span class="pill">${p.url ? "site" : "Lean"}</span>${p.tooling ? ` <span class="pill tool">tooling</span>` : ""}${p.slug && !live ? ` <span class="pill soon">explainer in progress</span>` : ""}</h3>
+    <h3><a href="${esc(href)}">${esc(name)}</a> <span class="pill">${esc(p.kind || (p.url ? "site" : "Lean"))}</span>${p.tooling ? ` <span class="pill tool">tooling</span>` : ""}${p.own ? ` <span class="pill own">own project</span>` : ""}${p.slug && !live ? ` <span class="pill soon">explainer in progress</span>` : ""}</h3>
     <p class="who">${who}</p>
     <p>${esc(desc)}</p>
     <p class="meta">Upstream: ${p.url ? `<a href="${esc(p.url)}">${esc(new URL(p.url).host)}</a>` : `<a href="https://github.com/${esc(p.repo)}">github.com/${esc(p.repo)}</a>`} by ${esc(p.authors)}${p.sha ? ` · pinned at <code>${p.sha.slice(0, 7)}</code>` : ""}${lic ? ` · ${lic}` : ""}${talk}</p>
