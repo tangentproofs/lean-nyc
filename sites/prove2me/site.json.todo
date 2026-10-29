@@ -1,0 +1,57 @@
+{
+ "slug": "prove2me",
+ "repo": "tangentproofs/lean-nyc",
+ "submodule": "sites/prove2me/snapshot",
+ "sha": "snapshot",
+ "members": [
+  "Kunal Marwaha"
+ ],
+ "authors": "Kunal Marwaha (prove2.me); each mission by its captain and contributors",
+ "authorUrl": "https://prove2.me",
+ "license": {
+  "spdx": "Apache-2.0",
+  "name": "Apache License 2.0 (prove2.me terms for public contributions)",
+  "file": "LICENSE",
+  "url": "https://prove2.me/terms"
+ },
+ "title": "TODO",
+ "brand": "TODO",
+ "h1": "TODO",
+ "lead": "TODO",
+ "desc": "TODO",
+ "startNote": "",
+ "sizeNote": "",
+ "agentCtx": "",
+ "roots": [],
+ "ns": "",
+ "headlines": [],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String"
+ ],
+ "gloss": {},
+ "headlineFiles": [],
+ "snapshot": {
+  "url": "https://prove2.me",
+  "name": "prove2.me",
+  "fetched": "2026-10-29"
+ }
+}

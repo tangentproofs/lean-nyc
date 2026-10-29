@@ -211,7 +211,7 @@ ${body}
     R: "../", title: "Source", current: null, tree: renderTree(tree, "", null, "../"), outline: "",
     main: `
     <h1>The Lean source</h1>
-    <p class="muted">All ${files.length} Lean files of <a href="https://github.com/${REPO}" target="_blank" rel="noopener">${REPO}</a>, highlighted and cross-linked.
+    <p class="muted">${CFG.snapshot ? `${files.length} files of short Lean goal statements quoted from <a href="${CFG.snapshot.url}" target="_blank" rel="noopener">${esc(CFG.snapshot.name)}</a> (fetched ${esc(CFG.snapshot.fetched)}), highlighted and cross-linked.` : `All ${files.length} Lean files of <a href="https://github.com/${REPO}" target="_blank" rel="noopener">${REPO}</a>, highlighted and cross-linked.`}
     Names defined in this project jump to their definition here; anything else (Mathlib, core) opens the
     <a href="https://leanprover-community.github.io/mathlib4_docs/" target="_blank" rel="noopener">Mathlib docs</a>.
     A <span class="nb explained" style="float:none">¶ plain English</span> badge next to a declaration opens its node page; every node page links back to its lines here.
@@ -271,7 +271,7 @@ function layout({ R, title, current, tree, outline, main, script }) {
     <a href="${R}index.html#/trust">Trust</a>
     <a href="${R}index.html#/about">About</a>
     <a href="${R}../">Lean NYC index</a>
-    <a href="https://github.com/${REPO}" target="_blank" rel="noopener">Original repo ↗</a>
+    <a href="${CFG.snapshot ? CFG.snapshot.url : `https://github.com/${REPO}`}" target="_blank" rel="noopener">${CFG.snapshot ? "Original site" : "Original repo"} ↗</a>
   </nav>
 </header>
 ${CFG.bannerHtml}
@@ -285,7 +285,7 @@ ${CFG.bannerHtml}
 </div>
 <footer>
   ${CFG.footerHtml}
-  This is the verbatim Lean of ${esc(REPO)} at commit ${CFG.sha.slice(0, 7)}, reproduced under its licence (${CFG.license.name}; <a href="${R}src/LICENSE.txt">licence text</a>${CFG.license.notice ? `, <a href="${R}src/NOTICE.txt">NOTICE</a>` : ""}). The plain-English pages are unofficial and may be wrong.
+  ${CFG.snapshot ? `Short Lean goal statements quoted from ${esc(CFG.snapshot.name)} (fetched ${esc(CFG.snapshot.fetched)}); each file names the page it comes from. Reproduced` : `This is the verbatim Lean of ${esc(REPO)} at commit ${CFG.sha.slice(0, 7)}, reproduced`} under its licence (${CFG.license.name}; <a href="${R}src/LICENSE.txt">licence text</a>${CFG.license.notice ? `, <a href="${R}src/NOTICE.txt">NOTICE</a>` : ""}). The plain-English pages are unofficial and may be wrong.
 </footer>
 ${script}
 </body>

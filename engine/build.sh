@@ -8,8 +8,9 @@ slug=$1; S=$ROOT/sites/$slug; B=$ROOT/build/$slug
 src=$(python3 -c "import json;print(json.load(open('$S/site.json'))['submodule'])")
 export LEARN_SRC_ROOT=$ROOT/$src
 want=$(python3 -c "import json;print(json.load(open('$S/site.json'))['sha'])")
-have=$(git -C "$LEARN_SRC_ROOT" rev-parse HEAD)
-[ "$want" = "$have" ] || { echo "site.json sha $want != submodule $src HEAD $have"; exit 1; }
+have=$(git -C "$LEARN_SRC_ROOT" rev-parse HEAD 2>/dev/null || echo none)
+snap=$(python3 -c "import json;print(1 if json.load(open('$S/site.json')).get('snapshot') else '')")
+[ -n "$snap" ] || [ "$want" = "$have" ] || { echo "site.json sha $want != submodule $src HEAD $have"; exit 1; }
 rm -rf "$B"; mkdir -p "$B/data"
 cp -r "$ROOT/engine/assets" "$ROOT/engine/tools" "$ROOT/engine/schema" "$ROOT/engine/package.json" "$B/"
 ln -s "$ROOT/engine/node_modules" "$B/node_modules"

@@ -17,7 +17,7 @@ const also = (p) => projects.filter((q) => q.secondaryOf === p.slug).map((q) => 
 }).join("");
 function card(p) {
   const s = info(p), live = p.explainer && s;
-  const name = p.repo.split("/")[1];
+  const name = p.url ? new URL(p.url).host : p.repo.split("/")[1];
   const hue = [...name].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7) % 6;
   const href = live ? `${p.slug}/` : p.url || `https://github.com/${p.repo}`;
   const who = p.members.map((m) => `<a href="${esc(m.profile)}">${esc(m.name)}</a>`).join(" &amp; ");
@@ -28,14 +28,15 @@ function card(p) {
     live ? `<a class="btn site" href="${p.slug}/"><b>Plain-English informalization</b> <span class="host">unofficial explainer</span> →</a>`
       : p.url ? `<a class="btn site" href="${esc(p.url)}"><b>Project site</b> <span class="host">${esc(new URL(p.url).host)}</span> →</a>`
       : `<span class="btn site soon">Explainer in progress</span>`,
-    `<a class="btn gh" href="https://github.com/${esc(p.repo)}">${GH} ${esc(p.repo)}</a>`].join("");
+    live && p.url ? `<a class="btn gh" href="${esc(p.url)}">${esc(new URL(p.url).host)} ↗</a>`
+      : `<a class="btn gh" href="https://github.com/${esc(p.repo)}">${GH} ${esc(p.repo)}</a>`].join("");
   return `<article class="card inf">
   <a class="thumb ph c${hue}" href="${esc(href)}" aria-label="${esc(name)}"><span class="ph-name">${esc(name)}</span><span class="ph-note">${live ? `${p.nodeCount ?? ""} explained nodes` : p.url ? "project site" : "explainer coming"}</span></a>
   <div class="body">
     <h3><a href="${esc(href)}">${esc(name)}</a> <span class="pill">${p.slug ? "Lean" : "site"}</span></h3>
     <p class="who">${who}</p>
     <p>${esc(desc)}</p>
-    <p class="meta">Upstream: <a href="https://github.com/${esc(p.repo)}">github.com/${esc(p.repo)}</a> by ${esc(p.authors)}${p.sha ? ` · pinned at <code>${p.sha.slice(0, 7)}</code>` : ""}${lic ? ` · ${lic}` : ""}${talk}</p>
+    <p class="meta">Upstream: ${p.url ? `<a href="${esc(p.url)}">${esc(new URL(p.url).host)}</a>` : `<a href="https://github.com/${esc(p.repo)}">github.com/${esc(p.repo)}</a>`} by ${esc(p.authors)}${p.sha ? ` · pinned at <code>${p.sha.slice(0, 7)}</code>` : ""}${lic ? ` · ${lic}` : ""}${talk}</p>
     ${also(p)}<div class="links multi">${btns}</div>
   </div>
 </article>`;

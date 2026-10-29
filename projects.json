@@ -360,7 +360,7 @@
    "nodeCount": 41
   },
   {
-   "slug": null,
+   "slug": "prove2me",
    "repo": "marwahaha/prove2me",
    "url": "https://prove2.me",
    "submodule": null,
@@ -375,8 +375,8 @@
    "authorUrl": "https://kunalmarwaha.com/about",
    "talk": "Prove2Me and the formalization of Fermat's Last Theorem",
    "talkUrl": null,
-   "description": "prove2.me, Kunal's featured project. No Lean repository for it is linked from lean.nyc, his home page or prove2.me; his linked GitHub has marwahaha/prove2me, which describes itself as the old version (TypeScript/Python, no Lean), so there is no Lean explainer.",
-   "license": null,
+   "description": "Prove2Me, Kunal's featured project: a platform where papers become formalization missions of Lean 4 + Mathlib goal statements that contributors and their agents prove. The explainer is built from the public site (his linked GitHub repo marwahaha/prove2me is the old TypeScript version, not Lean).",
+   "license": "Apache-2.0 (site terms)",
    "explainer": false
   }
  ]
