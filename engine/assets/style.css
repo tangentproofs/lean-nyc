@@ -269,3 +269,7 @@ a.srcref { border-bottom: 1px dotted var(--blue); } a.srcref:hover { text-decora
   border-left: 5px solid var(--green, #a6e22e); border-radius: 0 6px 6px 0; font-size: 1.1rem; line-height: 1.5; }
 .takeaway p { margin: .2rem 0; }
 .nosrc { padding: .7rem .9rem; border: 1px dashed var(--line); border-radius: 6px; color: var(--dim); font-size: .92rem; }
+.disclaimer, .disclaimer .lic { overflow-wrap: anywhere; }
+@media (max-width: 600px) { .disclaimer { padding: .75rem 1rem; font-size: 16px; } .disclaimer a { padding: 10px 0; } }
+@media (max-width: 900px) { .graph-wrap { grid-template-columns: minmax(0, 1fr); } .graph-wrap > * { min-width: 0; } }
+@media (max-width: 600px) { html, body { overflow-x: hidden; } main { padding: 1rem; overflow-wrap: anywhere; } main h1, main h2 { overflow-wrap: anywhere; } header.top nav a { display: inline-flex; align-items: center; min-height: 44px; } }

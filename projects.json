@@ -77,7 +77,8 @@
    "talkUrl": null,
    "description": "Precomposition on continuous alternating maps is not analytic in characteristic 2: the paper and its Lean 4 / Mathlib formalization",
    "license": "Apache-2.0",
-   "explainer": false
+   "explainer": true,
+   "nodeCount": 38
   },
   {
    "slug": "lea",
@@ -259,7 +260,8 @@
    "talkUrl": null,
    "description": "ETNA workload built from cedar-policy/cedar-spec: 9 mutation+property+witness atoms exercising Cedar-Lean's typechecker, validator, request-validator, level checker, and SymCC encoder.",
    "license": "Apache-2.0",
-   "explainer": false
+   "explainer": true,
+   "nodeCount": 35
   },
   {
    "slug": "inference_in_lean",

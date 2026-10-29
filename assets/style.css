@@ -50,4 +50,20 @@ h2 { font-size: 1.3rem; margin-top: 2.2rem; border-bottom: 1px solid var(--line)
 .btn.soon { opacity: .6; cursor: default; }
 .pill.soon { background: #fff3cd; color: #7a5200; border: 1px solid #e0b84c; }
 .btn.site.soon { opacity: 1; background: #fff3cd; color: #7a5200; border: 1px dashed #e0b84c; }
-.optout { background: #eef6ff; border: 1px solid #9cc3ea; border-radius: 8px; padding: .8em 1em; margin: 1em 0; }
+.optout { background: #14283c; color: #dbe9f7; border: 1px solid #3d6a96; border-radius: 8px; padding: .8em 1em; margin: 1em 0; }
+/* Mobile (phones ~390px): one column, no horizontal scroll, 16px text, 44px tap targets. */
+html, body { overflow-x: hidden; }
+.optout, .fan, .others, .meta, .body p { overflow-wrap: anywhere; }
+.others a { white-space: nowrap; }
+@media (max-width: 600px) {
+  header.top, header.top nav { flex-wrap: wrap; }
+  header.top { padding: .4rem 1rem; } header.top nav { gap: 0; } header.top nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 .6rem 0 0; margin: 0; }
+  .grid, .grid.feature { grid-template-columns: minmax(0, 1fr); }
+  main, .hero { padding-left: 1rem; padding-right: 1rem; }
+  .body p, .who, .optout, .fan, .others { font-size: 16px; }
+  .meta { font-size: 14px; line-height: 1.6; }
+  .btn { min-height: 44px; font-size: 16px; padding: .5rem .8rem; }
+  .others { line-height: 2.4; }
+  .others a { display: inline-block; min-height: 44px; line-height: 44px; }
+  .meta { line-height: 2.4; } .meta a, .who a, .optout a, .fan a, .tag a { padding: 12px 2px; }
+}
