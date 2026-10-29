@@ -50,3 +50,4 @@ h2 { font-size: 1.3rem; margin-top: 2.2rem; border-bottom: 1px solid var(--line)
 .btn.soon { opacity: .6; cursor: default; }
 .pill.soon { background: #fff3cd; color: #7a5200; border: 1px solid #e0b84c; }
 .btn.site.soon { opacity: 1; background: #fff3cd; color: #7a5200; border: 1px dashed #e0b84c; }
+.optout { background: #eef6ff; border: 1px solid #9cc3ea; border-radius: 8px; padding: .8em 1em; margin: 1em 0; }
