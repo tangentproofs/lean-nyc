@@ -378,6 +378,132 @@
    "description": "Prove2Me, Kunal's featured project: a platform where a paper becomes a formalization mission of small Lean 4 statements that contributors and their agents prove, with verified results collected in Formalpedia. The explainer describes the site and its trust model (his linked GitHub repo marwahaha/prove2me is the old TypeScript version, not Lean).",
    "license": null,
    "explainer": false
+  },
+  {
+   "slug": null,
+   "repo": "tangentproofs/tangentproofs.github.io",
+   "url": "https://tangentproofs.github.io/",
+   "submodule": null,
+   "sha": null,
+   "members": [
+    {
+     "name": "Michal Wallace",
+     "profile": "https://tangentproofs.github.io/"
+    }
+   ],
+   "authors": "Michal Wallace",
+   "authorUrl": "https://tangentproofs.github.io/",
+   "talk": null,
+   "talkUrl": null,
+   "description": "Michal Wallace's own Lean projects. The demo is the rakesieve explainer, in the same format as the explainers here; more are at tangentproofs.github.io.",
+   "license": null,
+   "explainer": false,
+   "demo": {
+    "url": "https://tangentproofs.github.io/rakesieve/learn/",
+    "label": "rakesieve"
+   }
+  }
+ ],
+ "others": [
+  {
+   "name": "Chaitanya Agarwal",
+   "url": "https://culechetoo.github.io/"
+  },
+  {
+   "name": "Zac Burton",
+   "url": "https://zacburton.com/"
+  },
+  {
+   "name": "Tung-Che Chang",
+   "url": "https://farmerzhang1.github.io/"
+  },
+  {
+   "name": "Eloise Christian",
+   "url": "https://lean.nyc/members"
+  },
+  {
+   "name": "Kyle Chui",
+   "url": "https://lean.nyc/members"
+  },
+  {
+   "name": "Marios Georgiou",
+   "url": "https://mariosgeorgiou.github.io/"
+  },
+  {
+   "name": "Kobi Gurkan",
+   "url": "https://lean.nyc/members"
+  },
+  {
+   "name": "Tjaden Hess",
+   "url": "https://lean.nyc/members"
+  },
+  {
+   "name": "Angie Hu",
+   "url": "https://lean.nyc/members"
+  },
+  {
+   "name": "Matthew Kaney",
+   "url": "https://lean.nyc/members"
+  },
+  {
+   "name": "June Kim",
+   "url": "https://lean.nyc/members"
+  },
+  {
+   "name": "Jon Kleid",
+   "url": "https://lean.nyc/members"
+  },
+  {
+   "name": "Joomy Korkut",
+   "url": "https://joomy.korkutblech.com/"
+  },
+  {
+   "name": "Carson Magnuson",
+   "url": "https://lean.nyc/members"
+  },
+  {
+   "name": "Ender Minyard",
+   "url": "https://enderminyard.com/"
+  },
+  {
+   "name": "Yuzhe Ni",
+   "url": "https://czpzc.com/"
+  },
+  {
+   "name": "Tsutomu Okano",
+   "url": "https://lean.nyc/members"
+  },
+  {
+   "name": "Kamal Radharamanan",
+   "url": "https://lean.nyc/members"
+  },
+  {
+   "name": "Eduardo Rafael",
+   "url": "https://lean.nyc/members"
+  },
+  {
+   "name": "Constantine Sadov",
+   "url": "https://www.ksadov.com/"
+  },
+  {
+   "name": "Jasdev Singh",
+   "url": "https://jasdev.me/"
+  },
+  {
+   "name": "Alaia Solko-Breslin",
+   "url": "https://alaiasolkobreslin.github.io/"
+  },
+  {
+   "name": "Will Sturgeon",
+   "url": "https://lean.nyc/members"
+  },
+  {
+   "name": "Oscar Thornton",
+   "url": "https://lean.nyc/members"
+  },
+  {
+   "name": "Gregory Wickham",
+   "url": "http://gregorywickham.com/"
   }
  ]
 }
