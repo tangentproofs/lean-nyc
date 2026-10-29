@@ -1,0 +1,80 @@
+{
+  "slug": "leantex",
+  "repo": "kiranandcode/LeanTeX",
+  "submodule": "projects/kiranandcode-leantex",
+  "sha": "d267083acdc7799c301f31b11bad7ec2f035f88a",
+  "members": [
+    "Kiran Gopinathan"
+  ],
+  "authors": "Kiran Gopinathan",
+  "authorUrl": "https://github.com/kiranandcode",
+  "license": {
+    "spdx": null,
+    "name": "No licence file",
+    "file": null
+  },
+  "title": "LeanTeX, explained",
+  "brand": "LeanTeX <em>explained</em>",
+  "h1": "LeanTeX: writing Beamer slide decks in Lean 4",
+  "lead": "LeanTeX is Kiran Gopinathan's Lean 4 library for writing LaTeX Beamer presentations <em>as Lean code</em>: slides are Lean definitions, a LaTeX-like DSL and a raw <code>latex![| … |]</code> literal build them, and <code>lake exec GenerateSlides</code> turns them into a PDF. <strong>It is a tool, not a proof development: it contains no theorems at all</strong>, so this site explains what its parsers, elaborators and code generator do rather than what they prove.",
+  "desc": "An unofficial plain-English tour of LeanTeX, Kiran Gopinathan's Lean 4 metaprogramming library that turns Lean definitions into Beamer slides: the raw-LaTeX literal, the slide and TikZ DSLs, the compile-time registries, and the PDF build.",
+  "startNote": "<p>LeanTeX has no theorems, so the \"headlines\" here are its main pieces of machinery. Start with <a href=\"#/node/interpolatedLatexFn\">the latex![| … |] literal</a>, then <a href=\"#/node/elabItem\">the slide DSL</a> and <a href=\"#/node/elabTikzItem\">the TikZ DSL</a>. To see how a deck becomes a PDF, read <a href=\"#/node/elabLeanTexConfig\">#leantex_config</a> and <a href=\"#/node/generateSlides\">generateSlides</a>, and <a href=\"#/node/generateSlidesLean\">the bootstrap</a> for what <code>lake exec GenerateSlides</code> does to your project. The review page lists a few suspected bugs found by reading.</p>",
+  "sizeNote": "About 1,040 lines of Lean in 11 files, plus a 130-line example project. No theorems.",
+  "agentCtx": "LeanTeX: a Lean 4 metaprogramming library (custom parser, syntax categories, elaborators, environment extensions) that generates LaTeX Beamer slides from Lean definitions and runs pdflatex. No theorems.",
+  "roots": [
+    "LeanTeX.lean",
+    "LeanTeX",
+    "GenerateSlides.lean",
+    "GenerateSlidesLib.lean"
+  ],
+  "ns": "",
+  "headlines": [
+    "interpolatedLatexFn",
+    "elabItem",
+    "elabTikzItem",
+    "elabLeanTexConfig",
+    "generateSlides"
+  ],
+  "mathlibNamespaces": [
+    "Nat",
+    "Int",
+    "List",
+    "Finset",
+    "Set",
+    "Function",
+    "Real",
+    "Fin",
+    "Option",
+    "Bool"
+  ],
+  "mathlibNames": [
+    "Nat",
+    "Int",
+    "List",
+    "Fin",
+    "Prop",
+    "Option",
+    "Bool",
+    "String"
+  ],
+  "gloss": {
+    "String": "Text. Almost everything LeanTeX builds is ultimately a string of LaTeX.",
+    "List": "A finite list: of slides, of slide contents, of options.",
+    "Option": "Either <code>some x</code> or <code>none</code>; used for optional titles, names and positions.",
+    "Nat": "The natural numbers 0, 1, 2, …; here, Beamer overlay step numbers.",
+    "IO": "Lean's type of programs with side effects (files, processes). <code>generateSlides</code> is one.",
+    "MetaM": "Lean's metaprogramming monad: code that runs inside Lean while it reads a file and can inspect or change the environment.",
+    "TermElabM": "The monad of Lean's term elaborator, which turns syntax into typed expressions.",
+    "MacroM": "The monad of Lean macros: code that rewrites syntax into other syntax.",
+    "CommandElab": "A handler for a top-level command such as <code>#leantex_config</code>.",
+    "ParserFn": "A low-level Lean parser function: it reads characters and builds syntax.",
+    "Syntax": "Lean's representation of parsed source code, before elaboration.",
+    "TSyntax": "Syntax tagged with the grammar category it belongs to.",
+    "Std.HashMap": "A hash map from keys to values; iteration order is not insertion order."
+  },
+  "headlineFiles": [
+    "LeanTeX/LatexLiteral.lean",
+    "LeanTeX/SlideDSL.lean",
+    "GenerateSlidesLib.lean"
+  ]
+}
