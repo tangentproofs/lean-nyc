@@ -1,0 +1,80 @@
+{
+ "slug": "cubing",
+ "repo": "rdavison/cubing",
+ "submodule": "projects/rdavison-cubing",
+ "sha": "ad5bdd080b93f301b863b6e3bfddae0770f007a9",
+ "members": [
+  "Richard Davison"
+ ],
+ "authors": "Richard Davison",
+ "authorUrl": "https://github.com/rdavison",
+ "license": {
+  "spdx": null,
+  "name": "No licence file",
+  "file": null
+ },
+ "title": "cubing, explained",
+ "brand": "cubing <em>explained</em>",
+ "h1": "The Rubik's cube group in Lean 4: which scrambles can be solved, and how many there are",
+ "lead": "A cube state can be reached by turning faces <strong>exactly</strong> when its corner twists total zero (mod 3), its edge flips total zero (mod 2), and its corner and edge permutations have the same parity. Hence there are exactly 43,252,003,274,489,856,000 reachable states. Both directions are proved in full, with no <code>sorry</code>, no extra axioms and no <code>native_decide</code>; the hard direction is built from six concrete, machine-evaluated algorithms (T-perm, A-perm, U-perm, two cycles and two orientation tools).",
+ "desc": "An unofficial plain-English tour of Richard Davison's Lean 4 formalisation of the 3x3x3 cube: the cube group as semidirect products, the three invariants, the generation lemma, and the proof that exactly 43,252,003,274,489,856,000 states are reachable.",
+ "startNote": "<p>Start with <a href=\"#/node/Cube\">Cube</a> (what a cube state is) and <a href=\"#/node/move\">move</a> (the six face turns). Then <a href=\"#/node/valid\">valid</a> gives the three invariants, and the headline <a href=\"#/node/reachable_eq_valid\">reachable_eq_valid</a> says they are the only obstructions. The hard direction rests on the generic <a href=\"#/node/OPerm.SetUp.le\">generation lemma</a>.</p>",
+ "sizeNote": "About 1,900 lines of Lean in 7 library files (plus about 590 lines for the Verso book that renders it, not covered here).",
+ "agentCtx": "A Lean 4 + Mathlib formalisation of the 3x3x3 Rubik's cube group (semidirect products), proving the fundamental theorem (reachable = valid) and the 43,252,003,274,489,856,000 count, written as a Verso book.",
+ "roots": [
+  "Cubing"
+ ],
+ "ns": "Cubing.Cube3x3.",
+ "headlines": [
+  "reachable_eq_valid",
+  "card_reachable",
+  "card_valid",
+  "toStickers_injective",
+  "colors_move_mul"
+ ],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool",
+  "Equiv",
+  "Subgroup",
+  "MonoidHom",
+  "SemidirectProduct",
+  "ZMod",
+  "Multiplicative",
+  "Perm",
+  "Prod",
+  "Pi",
+  "Units"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String",
+  "Equiv",
+  "Subgroup",
+  "MonoidHom",
+  "SemidirectProduct",
+  "ZMod",
+  "Multiplicative",
+  "Units"
+ ],
+ "gloss": {},
+ "headlineFiles": [
+  "Cubing/Cube3x3/Solvable.lean",
+  "Cubing/Cube3x3/Invariants.lean",
+  "Cubing/Cube3x3/Facelets.lean"
+ ]
+}
