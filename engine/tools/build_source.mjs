@@ -20,7 +20,8 @@ import { sourceUrl, githubSourceUrl, anchor, REPO } from "../assets/source.js";
 import CFG from "../assets/config.js";
 
 const NSES = CFG.ns ? [[CFG.ns, ""]] : [];
-const SOURCE_ROOTS = CFG.roots; // relative to the repo root
+const SOURCE_ROOTS = CFG.sourceRoots || CFG.roots; // relative to the repo root
+const SOURCE_EXTS = CFG.sourceExts || [".lean"]; // b4-bend renders .bend etc. too
 const MATHLIB_FIND = (n) => `https://leanprover-community.github.io/mathlib4_docs/find/?pattern=${encodeURIComponent(n)}#doc`;
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const attr = (s) => esc(s).replace(/"/g, "&quot;");
@@ -34,7 +35,7 @@ export function sourceFiles(repo) {
     if (!fs.existsSync(abs)) return;
     if (fs.statSync(abs).isDirectory()) {
       for (const f of fs.readdirSync(abs).sort()) if (!f.startsWith(".")) walk(path.posix.join(rel, f));
-    } else if (rel.endsWith(".lean")) out.push(rel);
+    } else if (SOURCE_EXTS.some((x) => rel.endsWith(x))) out.push(rel);
   };
   SOURCE_ROOTS.forEach(walk);
   return out.sort();
@@ -146,7 +147,7 @@ export function buildSource({ repo, dist, decls, nodes, xref }) {
       if (pos < i + tok.length) out += plain(tok.slice(pos - i));
       return out;
     };
-    const html = splitHtmlLines(highlight(lines.join("\n"), new Map(), undefined, refAt));
+    const html = splitHtmlLines(file.endsWith(".lean") ? highlight(lines.join("\n"), new Map(), undefined, refAt) : plainHighlight(lines.join("\n"), file));
 
     // Declarations in this file: outline (from xref, else from decls.json) and node badges.
     const here = (declsByFile.get(file) || []).slice().sort((a, b) => a.line - b.line);
@@ -413,3 +414,23 @@ const SOURCE_JS = `// Line-range highlighting for the source pages: #L9 or #L9-L
   apply(true);
 })();
 `;
+
+// Non-Lean files (b4-bend: .bend, .c, .js, Makefile, .org): a small generic Monokai highlighter.
+// Comments start with "#" (Bend, Makefile, org) or "//" (C, JS); strings; numbers; a few keywords.
+const PKW = new Set(("def law for if else elif match case return import as type with fork bend when lambda in " +
+  "switch let use open object while break continue int char void static const unsigned include function var " +
+  "true false True False").split(" "));
+function plainHighlight(src, file) {
+  const hash = !/\.(c|h|js)$/.test(file);
+  let out = "", i = 0;
+  while (i < src.length) {
+    const rest = src.slice(i); let m;
+    if ((hash && (m = rest.match(/^#[^\n]*/))) || (!hash && ((m = rest.match(/^\/\/[^\n]*/)) || (m = rest.match(/^\/\*[\s\S]*?\*\//))))) out += `<span class="cm">${esc(m[0])}</span>`;
+    else if ((m = rest.match(/^"(?:[^"\\\n]|\\.)*"/)) || (m = rest.match(/^'(?:[^'\\\n]|\\.)'/))) out += `<span class="str">${esc(m[0])}</span>`;
+    else if ((m = rest.match(/^(?:0x[0-9a-fA-F]+|\d+(?:\.\d+)?)/)) && !/[A-Za-z0-9_]/.test(src[i - 1] || "")) out += `<span class="num">${m[0]}</span>`;
+    else if ((m = rest.match(/^[A-Za-z_][A-Za-z0-9_]*/))) out += PKW.has(m[0]) ? `<span class="kw">${m[0]}</span>` : /^[A-Z]/.test(m[0]) ? `<span class="ty">${esc(m[0])}</span>` : esc(m[0]);
+    else { m = [rest[0]]; out += esc(m[0]); }
+    i += m[0].length;
+  }
+  return out;
+}

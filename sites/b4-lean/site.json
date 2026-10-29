@@ -10,8 +10,9 @@
  "authorUrl": "https://github.com/tangentstorm/b4",
  "license": {
   "spdx": null,
-  "name": "No licence file",
-  "file": null
+  "name": "No licence file (source shown with the author's permission)",
+  "file": null,
+  "authorPermission": true
  },
  "title": "b4 in Lean, explained",
  "brand": "b4-lean <em>explained</em>",
@@ -73,5 +74,11 @@
   "imp/lean/B4/Swarm.lean",
   "imp/lean/B4/Heap.lean",
   "imp/lean/B4/MM.lean"
+ ],
+ "sourceRoots": [
+  "imp/lean/B4",
+  "imp/lean/B4.lean",
+  "imp/lean/Main.lean",
+  "imp/lean/examples"
  ]
 }

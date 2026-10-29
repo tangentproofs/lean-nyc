@@ -26,9 +26,9 @@ to a GitHub line range, and no node has a formal statement extracted by the engi
 
 * **Escape hatches.** `@unsafe` (which turns off Bend's termination check, and which the Bend guide says makes a
   check report SOME PROOFS FAIL for anything relying on it) appears only on the console input loop
-  ([b4i.bend line 410](https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/b4i.bend#L410))
+  ([b4i.bend line 410](src/imp/bend/b4i.bend.html#L410))
   and the live-shell loop
-  ([live.bend line 277](https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/live.bend#L277)).
+  ([live.bend line 277](src/imp/bend/live.bend.html#L277)).
   Neither file is imported by PROOF.bend. There is none in vm.bend, LAWS.bend or PROOF.bend.
 * **Unproved laws.** None: LAWS.bend has 94 `law`s and PROOF.bend has 94 matching `L.` definitions.
 * **Trusted kernel.** The Makefile runs plain `bend PROOF.bend`. The Bend guide describes a `--verdict` flag that

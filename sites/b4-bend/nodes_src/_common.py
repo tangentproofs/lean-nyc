@@ -9,11 +9,16 @@ def U(f, a, b=None):
     return BASE + f + ("#L%d" % a if b is None or b == a else "#L%d-L%d" % (a, b))
 
 
+def S(f, a, b=None):
+    """On-site highlighted source page for imp/bend/<f> lines a..b (the author allows his code to be shown)."""
+    return "src/imp/bend/" + f + ".html" + ("#L%d" % a if b is None or b == a else "#L%d-L%d" % (a, b))
+
+
 def L(f, a, b=None):
-    """Markdown link 'f lines a–b' to those lines at the pinned commit."""
+    """Markdown link 'f lines a–b' to those lines on this site's source pages."""
     if b is None or b == a:
-        return "[%s line %d](%s)" % (f, a, U(f, a))
-    return "[%s lines %d–%d](%s)" % (f, a, b, U(f, a, b))
+        return "[%s line %d](%s)" % (f, a, S(f, a))
+    return "[%s lines %d–%d](%s)" % (f, a, b, S(f, a, b))
 
 
 def node(id, title, summary, body, quiz, caveats=(), widgets=None):

@@ -143,7 +143,7 @@ if (!xref) console.warn("warning: data/xref.json missing; source pages will have
 if (CFG.allowSource) {
   const src = buildSource({ repo: REPO_ROOT, dist: DIST, decls, nodes, xref });
   for (const w of src.warnings) console.warn("warning:", w);
-  fs.copyFileSync(path.join(REPO_ROOT, CFG.license.file), path.join(DIST, "src/LICENSE.txt"));
+  if (CFG.license.file) fs.copyFileSync(path.join(REPO_ROOT, CFG.license.file), path.join(DIST, "src/LICENSE.txt"));
   if (CFG.license.notice) fs.copyFileSync(path.join(REPO_ROOT, CFG.license.notice), path.join(DIST, "src/NOTICE.txt"));
   console.log(`source: ${src.stats.files} files, ${src.stats.linked} identifier links (${src.stats.local} to this project, ${src.stats.external} to Mathlib docs)`);
 } else console.log("source: not published (licence does not permit reproduction); line links go to GitHub at the pinned commit");

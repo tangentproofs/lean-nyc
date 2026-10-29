@@ -47,4 +47,5 @@ different choices:
 
 The rest of the b4 repository (the b4a assembler and BIOS, the Forth layer, the other implementations, the
 shared test documents themselves) is out of scope, except where `imp/bend` uses it. The repository has no
-LICENSE file, so this site quotes no source: it describes the code in prose and links to exact lines.
+LICENSE file; the author asked for the source to be shown, so every line reference opens the highlighted
+file on this site (Source, in the top bar), with a GitHub link beside it.
