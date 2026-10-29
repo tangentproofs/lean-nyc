@@ -137,7 +137,8 @@
    "talkUrl": null,
    "description": "",
    "license": "Apache-2.0",
-   "explainer": false
+   "explainer": true,
+   "nodeCount": 39
   },
   {
    "slug": "cubing",
