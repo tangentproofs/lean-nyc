@@ -36,7 +36,7 @@ The library is about 2,200 lines in seven files, InferenceInLean/A_Syntax.lean t
    by hand, and repeats of the Proposition 3.3.3 dualities. This site doesn't explain it node by node.
 
 **Left out.** The InferenceInLean/Exercises folder (about 330 lines) has solutions to course exercise sheets 4 and 5
-(finding models, Herbrand interpretations). Its header says parts of one exercise were drafted with an AI assistant.
+(finding models, Herbrand interpretations).
 It isn't imported by the library root and isn't covered here. Neither is G_Examples.lean imported by the root file
 InferenceInLean.lean, which imports only F_Resolution.lean (and through it A–E).
 

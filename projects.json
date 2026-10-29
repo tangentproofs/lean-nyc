@@ -255,7 +255,8 @@
    "talkUrl": null,
    "description": "Proof of soundness for resolution in first-order logic.",
    "license": "GPL-3.0",
-   "explainer": false
+   "explainer": true,
+   "nodeCount": 45
   },
   {
    "slug": "kripke-semantics",
