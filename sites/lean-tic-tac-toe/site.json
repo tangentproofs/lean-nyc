@@ -1,0 +1,66 @@
+{
+ "slug": "lean-tic-tac-toe",
+ "repo": "Ericson2314/lean-tic-tac-toe",
+ "submodule": "projects/ericson2314-lean-tic-tac-toe",
+ "sha": "fe33a8290351097e49332cdecd0c8c98fb0ffa00",
+ "members": [
+  "John Ericson"
+ ],
+ "authors": "John Ericson",
+ "authorUrl": "https://github.com/Ericson2314",
+ "license": {
+  "spdx": null,
+  "name": "No licence file",
+  "file": null
+ },
+ "title": "lean-tic-tac-toe, explained",
+ "brand": "tic-tac-toe <em>explained</em>",
+ "h1": "Tic-tac-toe in Lean 4, where an out-of-bounds move can't even be written down",
+ "lead": "This is a small, playable tic-tac-toe program, not a theorem library. Its point is that the board's size lives in its type, so every cell lookup comes with a proof that the index is in range, and the game cannot crash on a bad index. Its one theorem, that a successful move changes exactly one empty square, is stated but unfinished: <strong>PARTIAL (sorry)</strong>.",
+ "desc": "An unofficial plain-English tour of John Ericson's tic-tac-toe in Lean 4: size-indexed vectors and grids, move and win detection, a terminal game loop, and one unfinished (sorry'd) lemma.",
+ "startNote": "<p>Start with <a href=\"#/node/Vector\">Vector</a>, the size-carrying array everything else is built on. Then read <a href=\"#/node/Board.move\">Board.move</a> and <a href=\"#/node/gameDone\">gameDone</a> for the rules, and <a href=\"#/node/main\">main</a> for the game itself. The only theorem, <a href=\"#/node/movesAreValid\">movesAreValid</a>, is unfinished: its proof ends in <code>sorry</code>.</p>",
+ "sizeNote": "About 470 lines of Lean in 7 files (about 290 of them outside the test file). It targets Lean 4.10 with Batteries.",
+ "agentCtx": "A small Lean 4 tic-tac-toe game (any n×n board) built on size-indexed vectors, with a terminal frontend and one sorry'd lemma about moves.",
+ "roots": [
+  "TicTacToe.lean",
+  "TicTacToe",
+  "Main.lean"
+ ],
+ "ns": "",
+ "headlines": [
+  "Board.move",
+  "gameDone",
+  "main",
+  "movesAreValid"
+ ],
+ "mathlibNamespaces": [
+  "Nat",
+  "Fin",
+  "Option",
+  "Array"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Fin",
+  "Prop",
+  "Option",
+  "String"
+ ],
+ "gloss": {
+  "Fin": "<code>Fin n</code> is the type of natural numbers below <code>n</code>. Each value carries a proof that it is less than <code>n</code>.",
+  "Option": "<code>Option α</code> is either <code>some a</code> (a value) or <code>none</code> (no value). Here it means \"may fail\".",
+  "Option.some": "The \"there is a value\" case of <code>Option</code>.",
+  "Option.none": "The \"no value\" case of <code>Option</code>.",
+  "Option.orElse": "Keep the first option if it is <code>some</code>, otherwise run the fallback.",
+  "Nat": "The natural numbers 0, 1, 2, ….",
+  "Nat.succ": "<code>Nat.succ k</code> is <code>k + 1</code>. Writing a size this way forces it to be at least 1.",
+  "Fin.elim0": "There is no element of <code>Fin 0</code>, so this case cannot happen.",
+  "Prop": "The type of logical statements.",
+  "String": "Text."
+ },
+ "headlineFiles": [
+  "TicTacToe.lean",
+  "TicTacToe/Lemma.lean",
+  "Main.lean"
+ ]
+}
