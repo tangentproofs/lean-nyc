@@ -37,7 +37,8 @@
    "talkUrl": null,
    "description": "Open, independently re-checkable IEEE 754 bit-exact verification substrate in Lean 4. Mathlib-free, solver-free re-verification.",
    "license": "Apache-2.0",
-   "explainer": false
+   "explainer": true,
+   "nodeCount": 25
   },
   {
    "slug": "leantex",
@@ -193,7 +194,8 @@
    "talkUrl": null,
    "description": "",
    "license": null,
-   "explainer": false
+   "explainer": true,
+   "nodeCount": 27
   },
   {
    "slug": "cd4vt",

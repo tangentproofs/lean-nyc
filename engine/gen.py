@@ -11,10 +11,10 @@ repo, sha = C["repo"], C["sha"]
 gh = f"https://github.com/{repo}"
 e = html.escape
 lic_url = f"{gh}/blob/{sha}/{lic['file']}" if lic.get("file") else None
-lic_link = f'<a href="{lic_url}" target="_blank" rel="noopener">{e(lic["name"])}</a>' if lic_url else e(lic["name"])
+lic_link = f'<a href="{lic_url}" target="_blank" rel="noopener">{e(lic["name"])}</a>' if lic_url else "none found in the repository"
 lic["short"] = ("is published under " + lic["name"] + ", but this site does not reproduce its source") if not allow and lic_url else "has no licence file, so this site does not copy its source"
 handling = ("Source reproduced on this site under that licence, with its notice." if allow
-            else "No licence was found, so this site reproduces none of its source: it explains in prose and links to the exact lines on GitHub.")
+            else "So this site reproduces none of its source: it explains in prose and links to the exact lines on GitHub.")
 author = f'<a href="{e(C["authorUrl"])}" target="_blank" rel="noopener">{e(C["authors"])}</a>' if C.get("authorUrl") else e(C["authors"])
 banner = f'''<div class="disclaimer" role="note"><b>Unofficial explainer.</b> This is not official documentation for <a href="{gh}" target="_blank" rel="noopener">{e(repo)}</a>. It was written independently (AI-assisted) from the public source at commit <a href="{gh}/tree/{sha}" target="_blank" rel="noopener"><code>{sha[:7]}</code></a>, and may contain errors. See the original repository by {author}.<span class="lic">Licence: {lic_link}. {handling}</span></div>'''
 credit = f'The Lean project <a href="{gh}" target="_blank" rel="noopener">{e(repo)}</a> is by {author}.'

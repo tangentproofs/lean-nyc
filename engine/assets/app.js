@@ -298,7 +298,7 @@ function nodePage(id) {
       <section class="sbs-formal"><div class="sbs-formal-inner">
         <h2>Formal statement</h2>
         ${lean == null ? noSrc(d) : `<pre class="lean wrap">${lean}</pre>`}
-        <p class="small muted">${srcLink(d, "")}
+        <p class="small muted">${lean == null ? "" : srcLink(d, "")}
         ${d.variables.length ? ` · section variables in scope: <code>${esc(d.variables.join("  "))}</code>` : ""}</p>
         <div class="small">
           <div><b>Mentions</b> (understand these first): <div class="deps">${depLinks(d.meaningDeps)}</div></div>
