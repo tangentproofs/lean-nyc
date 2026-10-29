@@ -31,6 +31,7 @@ t("wrap: one .ln per line, indentation moved into --i, tail on the last line", (
 const decls = JSON.parse(fs.readFileSync(path.join(SITE, "data/decls.json"), "utf8"));
 t(`all ${decls.length} statements survive wrapping`, () => {
   for (const d of decls) {
+    if (d.kind === "concept") continue; // concept nodes (website explainers) have no Lean statement
     const html = highlight(d.statement, linkMap([...d.meaningDeps, ...d.proofDeps, d.id]));
     const w = wrapLeanLines(html, d.statement);
     assert.ok(balanced(w), `${d.id}: unbalanced`);

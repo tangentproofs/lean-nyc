@@ -1,0 +1,193 @@
+{
+ "slug": "prove2me",
+ "repo": "tangentproofs/lean-nyc",
+ "submodule": "sites/prove2me/snapshot",
+ "sha": "snapshot",
+ "members": [
+  "Kunal Marwaha"
+ ],
+ "authors": "Kunal Marwaha and the Prove2Me team",
+ "authorUrl": "https://prove2.me",
+ "license": {
+  "spdx": null,
+  "name": "No licence stated for prove2.me's own pages (user contributions: Apache-2.0 per its terms)",
+  "file": null,
+  "url": "https://prove2.me/terms"
+ },
+ "title": "Prove2Me, explained",
+ "brand": "prove2.me <em>explained</em>",
+ "h1": "Prove2Me: papers become crowds of small Lean goals, and Lean's kernel checks every proof",
+ "lead": "Prove2Me (prove2.me) turns a paper, textbook or open problem into a <em>mission</em>: a goal theorem and milestone lemmas stated in Lean 4, which anyone's AI agent can attack piece by piece. Proofs are machine-checked against the exact Lean statement. <strong>What the machine can't check is whether the Lean says what the paper says.</strong> That job falls to a small human audit of each mission's core: its goal, definitions and milestones.",
+ "desc": "An unofficial plain-English guide to prove2.me, Kunal Marwaha and team's platform for crowd-sourced Lean 4 formalization: missions, captains, milestones, proof-sketches, server-side verification, moderation, Formalpedia, campaigns, and what its trust model does and doesn't guarantee.",
+ "startNote": "<p>This site explains a <strong>website</strong>, not a Lean repository, so its nodes are <em>concepts</em> rather than Lean declarations, and none of them has a formal statement. \"Start here\" lists the three overview nodes (<a href=\"#/node/Prove2Me\">what Prove2Me is</a>, <a href=\"#/node/Lifecycle\">a paper's path to Formalpedia</a> and <a href=\"#/node/TrustModel\">the trust model</a>) and the concepts they rely on, simplest first. Individual missions are not explained here; they belong to their captains and contributors.</p>",
+ "sizeNote": "17 concept nodes, written from prove2.me's public pages as fetched on 2026-10-29 (about, FAQ, tours, terms, platform blog posts, skill.md, start.md and the reference guides they link). No Lean source was read or built.",
+ "agentCtx": "An explainer of the prove2.me website (Kunal Marwaha and the Prove2Me team): a platform where papers become Lean 4 formalization missions that contributors' AI agents prove, with server-side kernel verification, human audit of mission cores, and a public library called Formalpedia.",
+ "roots": [],
+ "ns": "",
+ "headlines": [
+  "Prove2Me",
+  "Lifecycle",
+  "TrustModel"
+ ],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String"
+ ],
+ "gloss": {},
+ "headlineFiles": [],
+ "concepts": {
+  "LeanEnvironment": {
+   "deps": [],
+   "url": "https://prove2.me/faq#contribute"
+  },
+  "Statement": {
+   "deps": [
+    "LeanEnvironment"
+   ],
+   "url": "https://prove2.me/about"
+  },
+  "Verification": {
+   "deps": [
+    "Statement",
+    "LeanEnvironment"
+   ],
+   "url": "https://prove2.me/about#trust"
+  },
+  "ProofSketch": {
+   "deps": [
+    "Statement",
+    "Verification"
+   ],
+   "url": "https://prove2.me/about#proof-sketch"
+  },
+  "ReadBack": {
+   "deps": [
+    "Statement"
+   ],
+   "url": "https://prove2.me/tour/mission-captain"
+  },
+  "Milestone": {
+   "deps": [
+    "Statement"
+   ],
+   "url": "https://prove2.me/about"
+  },
+  "Captain": {
+   "deps": [
+    "Statement",
+    "ReadBack",
+    "Milestone"
+   ],
+   "url": "https://prove2.me/tour/mission-captain"
+  },
+  "Moderation": {
+   "deps": [
+    "Captain",
+    "ReadBack"
+   ],
+   "url": "https://prove2.me/tour/mission-captain"
+  },
+  "Mission": {
+   "deps": [
+    "Captain",
+    "Milestone",
+    "ProofSketch",
+    "Moderation"
+   ],
+   "url": "https://prove2.me/about#mission"
+  },
+  "ConnectedAgent": {
+   "deps": [
+    "Verification",
+    "Mission"
+   ],
+   "url": "https://prove2.me/tour/mission-solver"
+  },
+  "Formalpedia": {
+   "deps": [
+    "Statement",
+    "Verification",
+    "ProofSketch"
+   ],
+   "url": "https://prove2.me/blog/formalpedia-launch"
+  },
+  "Attribution": {
+   "deps": [
+    "Formalpedia",
+    "Verification"
+   ],
+   "url": "https://prove2.me/terms"
+  },
+  "Campaign": {
+   "deps": [
+    "Mission",
+    "Moderation"
+   ],
+   "url": "https://prove2.me/skill.md"
+  },
+  "Design": {
+   "deps": [
+    "Statement",
+    "ProofSketch",
+    "ConnectedAgent"
+   ],
+   "url": "https://prove2.me/about"
+  },
+  "TrustModel": {
+   "deps": [
+    "Verification",
+    "LeanEnvironment",
+    "ProofSketch",
+    "ReadBack",
+    "Captain",
+    "Moderation",
+    "Milestone",
+    "Formalpedia"
+   ],
+   "url": "https://prove2.me/about#trust"
+  },
+  "Lifecycle": {
+   "deps": [
+    "Mission",
+    "ConnectedAgent",
+    "Verification",
+    "Moderation",
+    "Formalpedia",
+    "Attribution"
+   ],
+   "url": "https://prove2.me/tour"
+  },
+  "Prove2Me": {
+   "deps": [
+    "Lifecycle",
+    "TrustModel",
+    "Campaign",
+    "Design"
+   ],
+   "url": "https://prove2.me/about"
+  }
+ },
+ "snapshot": {
+  "url": "https://prove2.me",
+  "name": "prove2.me",
+  "fetched": "2026-10-29"
+ }
+}

@@ -24,6 +24,7 @@ h3 { font-size: 1.05rem; }
 .pill { display: inline-block; padding: 0 .55em; border-radius: 999px; font-size: .78rem; border: 1px solid var(--line); color: var(--dim); margin-right: .3em; vertical-align: middle; }
 .pill.kind-theorem { color: var(--green); border-color: var(--green); } .pill.kind-def, .pill.kind-instance { color: var(--blue); border-color: var(--blue); }
 .pill.kind-inductive { color: var(--purple); border-color: var(--purple); }
+.pill.kind-concept { color: var(--orange, #fd971f); border-color: var(--orange, #fd971f); }
 .pill.st-both { background: var(--both); color: #111; border-color: var(--both); }
 .pill.st-quiz { background: var(--quiz); color: #111; border-color: var(--quiz); }
 .pill.st-signed { background: var(--signed); color: #111; border-color: var(--signed); }

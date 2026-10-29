@@ -244,6 +244,11 @@ def main():
                 n = ml_name(t)
                 if "_" not in n.rsplit(".", 1)[-1] and n not in ml: ml.append(n)
         d["mathlib"] = ml
+    # Concept nodes (scan.config "concepts", e.g. prove2me): explainer nodes with no Lean declaration behind
+    # them, for sites that explain a website rather than a repository. Absent for every other site.
+    for cid, c in CFG.get("concepts", {}).items():
+        decls.append({"id": cid, "name": cid, "kind": "concept", "file": None, "line": None, "endLine": None,
+                      "statement": None, "url": c.get("url"), "meaningDeps": list(c.get("deps", [])), "proofDeps": [], "mathlib": []})
     ids = {d["id"]: d for d in decls}
     for h in HEADS:
         if h not in ids: raise SystemExit(f"headline {h} not found")
@@ -261,10 +266,11 @@ def main():
     out = []
     for d in sorted(decls, key=lambda d: d["id"]):
         out.append({"id": d["id"], "name": d["name"], "kind": d["kind"], "file": d["file"],
-                    "module": d["file"].rsplit("/", 1)[-1][:-5], "line": d["line"], "endLine": d["endLine"],
+                    "module": d["file"].rsplit("/", 1)[-1][:-5] if d["file"] else "concepts", "line": d["line"], "endLine": d["endLine"],
                     "statement": d["statement"], "variables": [], "truncated": False,
                     "mathlib": d["mathlib"], "meaningDeps": d["meaningDeps"], "proofDeps": d["proofDeps"],
-                    "usedBy": sorted(set(used[d["id"]])), "depth": dist.get(d["id"]), "extracted": False})
+                    "usedBy": sorted(set(used[d["id"]])), "depth": dist.get(d["id"]), "extracted": False,
+                    **({"url": d["url"]} if d["kind"] == "concept" else {})})
     json.dump(out, open(os.path.join(OUT, "decls.json"), "w", encoding="utf-8"), indent=1, ensure_ascii=False)
 
     # Heuristic xref (same format as build_xref.py) for every rendered .lean file.
