@@ -156,7 +156,8 @@
    "talkUrl": null,
    "description": "An interactive cubing reference and trainer, formalised in Lean 4",
    "license": null,
-   "explainer": false
+   "explainer": true,
+   "nodeCount": 35
   },
   {
    "slug": "schiffer",
