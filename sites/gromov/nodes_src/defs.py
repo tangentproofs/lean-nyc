@@ -348,7 +348,7 @@ of *G'* to the integers.
 
 Producing this data is the analytic half of the proof
 ([exists_theorem_3_1_input](#/node/exists_theorem_3_1_input)). Consuming it is the algebraic half
-([theorem_3_1](#/node/theorem_3_1.)). Tao's outline calls this "a finite-index subgroup with infinite abelianization",
+([theorem_3_1](#/node/theorem_3_1)). Tao's outline calls this "a finite-index subgroup with infinite abelianization",
 reduced to a surjection onto ℤ.
 """,
  [q("Why is a map onto ℤ useful?",

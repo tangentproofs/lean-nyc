@@ -30,7 +30,7 @@ The three files the task brief flagged as mentioning `sorry` are the three rows 
 FormalConjecturesCheck.lean and Vendor/Carleson.lean. None of them contains a live gap.
 
 So, as far as text inspection can tell, the headline theorems are **complete**. Nothing is labelled PARTIAL. The only
-CONDITIONAL statement is the inductive step [theorem_3_1](#/node/theorem_3_1.), whose extra hypothesis is discharged
+CONDITIONAL statement is the inductive step [theorem_3_1](#/node/theorem_3_1), whose extra hypothesis is discharged
 by [main_gromov_theorem](#/node/main_gromov_theorem).
 
 ## Other provenance notes
@@ -52,7 +52,6 @@ The declaration list, statements and dependency links come from a text scan of t
   such as `f`, `C`, `B`, `G'`). So some "meaning dependency" links are spurious;
 * to avoid a false dependency cycle through a declaration named `f`, **Gromov/VWrapper.lean is excluded from the
   scan**. Its declarations have no pages, but line references into it still link to GitHub;
-* `theorem_3_1` is listed with a trailing dot (`theorem_3_1.`) because of its universe annotation.
 
 ## Explanations
 

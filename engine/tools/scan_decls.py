@@ -93,6 +93,7 @@ def scan(file):
         if re.match(r"^(section|end|open|variable|universe|set_option|attribute|#|noncomputable section|mutual|import)\b", ln): starts.append(("other", k)); continue
         if (m := DECL.match(ln)) and not ln.startswith(" "):
             name = m.group(2)
+            if name and name.endswith("."): name = name[:-1]  # `theorem foo.{u}`: drop the universe-parameter dot
             if not name:
                 if m.group(1) != "instance": continue
                 anon += 1; name = f"instance_{k + 1}"

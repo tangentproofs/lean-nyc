@@ -42,7 +42,7 @@ symmetric, and the Formal Conjectures bridge makes the question moot.
   linear group embeds in U(*n*) by the [unitarian trick](#/node/new_weyl_unitarian_trick), and
   [theorem_3_8_real](#/node/theorem_3_8_real) states the general compact-linear version. Not weaker than needed, but
   narrower than "compact Lie groups" in general.
-* [theorem_3_1](#/node/theorem_3_1.): **CONDITIONAL by design.** It takes the inductive hypothesis (Gromov's theorem in
+* [theorem_3_1](#/node/theorem_3_1): **CONDITIONAL by design.** It takes the inductive hypothesis (Gromov's theorem in
   degree *d* − 1) as an explicit assumption. main_gromov_theorem discharges it by induction, so the final result is
   unconditional.
 * [theorem_3_23](#/node/theorem_3_23) uses a "tends to 0" growth condition where the source uses "liminf < ∞"

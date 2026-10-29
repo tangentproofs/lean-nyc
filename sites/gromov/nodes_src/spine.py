@@ -399,7 +399,7 @@ and γ is nilpotent.
 Since *N'* is characteristic in the normal subgroup *H*, conjugation by γ maps *N'* to itself. The hypothesis says γ
 acts unipotently. The proof shows that the lower central series of ⟨*N'*, γ⟩ reaches 1, by counting how often γ appears
 in long commutators (`count_mem_group_implies_lowercentral`, lines 165–214). This is the last step of
-[theorem_3_1](#/node/theorem_3_1.).
+[theorem_3_1](#/node/theorem_3_1).
 """,
  [q("Why does N' need to be characteristic in H?",
     ["So that conjugation by γ (which preserves the normal subgroup H) also preserves N'",

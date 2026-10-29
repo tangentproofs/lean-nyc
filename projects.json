@@ -463,8 +463,8 @@
    "talkUrl": "https://lean.nyc/blog/formalizing-gromovs-theorem",
    "description": "A Lean 4 formalization of Gromov's theorem: a finitely generated group has polynomial growth exactly when it is virtually nilpotent.",
    "license": null,
-   "explainer": false,
-   "nodeCount": null
+   "explainer": true,
+   "nodeCount": 38
   },
   {
    "slug": "formal-learning-theory",

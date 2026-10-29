@@ -71,6 +71,6 @@ that the code comments follow. Each item links to its explainer node and to the 
     (Gromov/Unipotent/GammaN.lean lines 645–842).
 19. **Nilpotent extension.** [unipotent_commutator_trivial](#/node/unipotent_commutator_trivial)
     (Gromov/UnipotentGromov.lean lines 224–594).
-20. **Assemble.** [theorem_3_1](#/node/theorem_3_1.) (Gromov/Gromov.lean lines 44–989). The kernel is virtually
+20. **Assemble.** [theorem_3_1](#/node/theorem_3_1) (Gromov/Gromov.lean lines 44–989). The kernel is virtually
     nilpotent by induction. A characteristic nilpotent finite-index subgroup *N'* together with γ<sup>α</sup>
     generates a nilpotent finite-index subgroup of *G*.

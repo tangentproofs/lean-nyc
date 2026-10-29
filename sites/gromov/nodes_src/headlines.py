@@ -112,7 +112,7 @@ The proof inducts on the degree *n* (Tao's strategy):
   trivial subgroup as a nilpotent subgroup of finite index.
 * **Degree *k* + 1.** First find a finite-index subgroup *G'* that maps onto ℤ
   ([exists_theorem_3_1_input](#/node/exists_theorem_3_1_input)). This is where harmonic functions come in. Then apply
-  the [inductive step](#/node/theorem_3_1.). It needs, as an input, Gromov's theorem for every group of growth degree
+  the [inductive step](#/node/theorem_3_1). It needs, as an input, Gromov's theorem for every group of growth degree
   *k*, and the induction hypothesis supplies that. Finite groups are again handled directly.
 
 The induction is over all `Generates` instances at once (`generalizing hGS`, line 997). That matters because the
@@ -148,7 +148,7 @@ of those commands was not seen.
    {"text": "n = k + 1: obtain a finite-index subgroup G' with a surjection onto ℤ (line 1008).",
     "link": "exists_theorem_3_1_input"},
    {"text": "Apply the inductive step theorem_3_1 (line 1011). It reduces the goal to Gromov's theorem for groups of "
-            "growth degree n − 1.", "link": "theorem_3_1."},
+            "growth degree n − 1.", "link": "theorem_3_1"},
    {"text": "For such a group Q: if Q is finite, it is virtually nilpotent with the trivial subgroup (lines 1014–1020). "
             "Otherwise use the induction hypothesis (line 1023)."},
  ]))
@@ -350,7 +350,7 @@ The proof is a well-founded induction (lines 433–437 close lexicographic-order
  ]))
 
 
-node("theorem_3_1.",
+node("theorem_3_1",
  "Headline: the inductive step (theorem_3_1)",
  "If G has growth degree d ≥ 1, contains a finite-index subgroup G' mapping onto ℤ, and Gromov's theorem holds in "
  "degree d − 1, then G is virtually nilpotent. The kernel is virtually nilpotent by induction, and the extra ℤ "
@@ -368,8 +368,7 @@ node("theorem_3_1.",
 Then *G* is virtually nilpotent.
 
 This is the algebraic half of Gromov's theorem, and it is the longest single proof in the project (about 950
-lines). The scanned id has a trailing dot (`theorem_3_1.`) because the declaration carries an explicit universe
-annotation that the site's text scanner does not strip.
+lines).
 
 ### Why this works (Tao's §3 / Milnor–Wolf argument)
 

@@ -18,7 +18,7 @@
  "h1": "A Lean proof that every finitely generated group of polynomial growth is virtually nilpotent",
  "lead": "Aaron Hill's project proves the hard direction of <strong>Gromov's theorem</strong> in Lean 4: if a finitely generated group has balls of radius n with at most C·n<sup>d</sup> elements, then it has a nilpotent subgroup of finite index. The proof follows Kleiner's harmonic-function route as written up by Tao, and inducts on the growth degree d. A text search of the pinned commit finds <strong>no live <code>sorry</code></strong>: the only hits are comments. The converse (Bass–Guivarc'h) is <strong>not</strong> proved. The Lean was <strong>not built</strong> for this site.",
  "desc": "An unofficial plain-English tour of Aaron Hill's Lean 4 formalization of Gromov's theorem on groups of polynomial growth (the hard direction): the statement checked against Formal Conjectures, and the Kleiner–Tao proof spine of harmonic functions, a finite-dimensional representation, compact linear groups and induction on the growth degree.",
- "startNote": "<p>Start with the headline <a href=\"#/node/FormalConjecturesCheck.gromov_forward\">gromov_forward</a>, which states Gromov's theorem in the Formal Conjectures wording, and its ingredient <a href=\"#/node/FormalConjecturesCheck.HasPolynomialGrowth\">HasPolynomialGrowth</a>. Then read <a href=\"#/node/main_gromov_theorem\">main_gromov_theorem</a> and the <a href=\"#/roadmap\">Roadmap</a>, which walks the proof in dependency order: <a href=\"#/node/exists_nontrivial_harmonic\">harmonic functions exist</a>, <a href=\"#/node/Lipschitz_finite_dimensional\">there are finitely many dimensions of them</a>, <a href=\"#/node/compact_lie_virtually_abelian\">compact linear groups</a>, and the <a href=\"#/node/theorem_3_1.\">inductive step</a>.</p>",
+ "startNote": "<p>Start with the headline <a href=\"#/node/FormalConjecturesCheck.gromov_forward\">gromov_forward</a>, which states Gromov's theorem in the Formal Conjectures wording, and its ingredient <a href=\"#/node/FormalConjecturesCheck.HasPolynomialGrowth\">HasPolynomialGrowth</a>. Then read <a href=\"#/node/main_gromov_theorem\">main_gromov_theorem</a> and the <a href=\"#/roadmap\">Roadmap</a>, which walks the proof in dependency order: <a href=\"#/node/exists_nontrivial_harmonic\">harmonic functions exist</a>, <a href=\"#/node/Lipschitz_finite_dimensional\">there are finitely many dimensions of them</a>, <a href=\"#/node/compact_lie_virtually_abelian\">compact linear groups</a>, and the <a href=\"#/node/theorem_3_1\">inductive step</a>.</p>",
  "sizeNote": "About 28,400 lines of Lean in 75 files, including about 830 lines vendored from the Carleson project (Apache-2.0) and about 490 lines of tactic code and tests. This site explains the statements and the proof spine; the analytic and matrix estimates are outlined, not explained.",
  "agentCtx": "A Lean 4 + Mathlib formalization by Aaron Hill of Gromov's theorem (finitely generated groups of polynomial growth are virtually nilpotent), following Kleiner's proof via Lipschitz harmonic functions as presented by Tao, with an induction on the growth degree.",
  "roots": [
@@ -69,7 +69,7 @@
   "exists_nontrivial_harmonic",
   "Lipschitz_finite_dimensional",
   "compact_lie_virtually_abelian",
-  "theorem_3_1."
+  "theorem_3_1"
  ],
  "mathlibNamespaces": [
   "Nat",
