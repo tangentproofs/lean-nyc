@@ -1,0 +1,81 @@
+{
+ "slug": "numina-lean-agent",
+ "repo": "project-numina/numina-lean-agent",
+ "submodule": "projects/project-numina-numina-lean-agent",
+ "sha": "1c9af8a52e715f22fede766425ba3d3b95526132",
+ "members": [
+  "Justin Asher"
+ ],
+ "authors": "Project Numina (paper authors: Junqi Liu, Zihao Zhou, Zekai Zhu, Marco Dos Santos, Weikun He, Jiawei Liu, Ran Wang, Yunzhou Xie, Junqiao Zhao, Qiufeng Wang, Lihong Zhi, Jia Li, Wenda Li)",
+ "authorUrl": "https://github.com/project-numina",
+ "license": {
+  "spdx": null,
+  "name": "No licence file",
+  "file": null
+ },
+ "title": "Numina-Lean-Agent, explained",
+ "brand": "Numina-Lean-Agent <em>explained</em>",
+ "h1": "A Claude Code agent for Lean proofs, and the 17 problem statements it ships with",
+ "lead": "Numina-Lean-Agent is mostly Python, prompts and tool wrappers that drive Claude Code to write Lean 4 proofs. The Lean it ships is a small problem set: the twelve Putnam 2025 problems and five miniF2F problems, written as formal statements whose proofs are <strong>deliberately left as <code>sorry</code></strong>. Only one of the seventeen, a miniF2F divisor-sum fact, has a proof here, a single <code>decide</code>. The agent's finished Putnam proofs live in a separate repository.",
+ "desc": "An unofficial plain-English tour of project-numina/numina-lean-agent: what the agent does, what its bundled Lean problem statements (Putnam 2025 and miniF2F) actually say, and how the harness checks a submitted proof.",
+ "startNote": "<p>Read <a href=\"#/page/about\">About</a> first: it says what the project is and which parts are not Lean at all. Then pick a problem: <a href=\"#/node/putnam_2025_a2\">A2, the sine sandwich</a>, is the easiest to read; <a href=\"#/node/putnam_2025_a3\">A3, the ternary-string game</a>, shows how a competition game gets encoded; <a href=\"#/node/amc12a_2021_p7\">amc12a_2021_p7</a> is the only statement that comes with a proof.</p>",
+ "sizeNote": "About 190 lines of Lean in 17 problem files (12 Putnam 2025, 5 miniF2F), plus a one-line placeholder library. The rest of the repository is Python, Markdown prompts and shell scripts.",
+ "agentCtx": "project-numina/numina-lean-agent: a Claude Code based agent (Python harness, prompts, CLI skills) for Lean 4 theorem proving, shipping Putnam 2025 and miniF2F problem statements left as sorry.",
+ "roots": [
+  "leanproblems/Putnam2025",
+  "leanproblems/Minif2f"
+ ],
+ "ns": "",
+ "headlines": [
+  "putnam_2025_a2",
+  "putnam_2025_a3",
+  "putnam_2025_a5",
+  "putnam_2025_b3",
+  "putnam_2025_b4",
+  "amc12a_2021_p7"
+ ],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String"
+ ],
+ "gloss": {
+  "Fin": "Lean's <code>Fin n</code>: the numbers 0, …, n−1. In A3 a digit is a <code>Fin 3</code>. In A5 a permutation acts on <code>Fin (n+1)</code>. Mathlib gives <code>Fin n</code> arithmetic modulo n.",
+  "Finset.univ": "Mathlib's <code>Finset.univ</code>: the finite set of all elements of a finite type, such as all strings of length n.",
+  "Finset.card": "Mathlib's <code>Finset.card</code>: the number of elements of a finite set.",
+  "Finset.sum": "Mathlib's big-operator sum Σ over a finite set.",
+  "Finset.range": "Mathlib's <code>Finset.range n</code>: the finite set {0, 1, …, n−1}.",
+  "Nat.divisors": "Mathlib's <code>Nat.divisors n</code>: the finite set of positive divisors of n. It is computed by testing every number from 1 to n.",
+  "Nat.gcd": "The greatest common divisor of two natural numbers.",
+  "IsGreatest": "Mathlib's <code>IsGreatest S a</code>: a is in S and every element of S is at most a.",
+  "IsLeast": "Mathlib's <code>IsLeast S a</code>: a is in S and every element of S is at least a.",
+  "Equiv.Perm": "Mathlib's <code>Equiv.Perm α</code>: the permutations (bijections) of α.",
+  "Prop": "Lean's type of propositions. <code>MatrixProp</code> and <code>IsRollout</code> are Props, not runnable checks.",
+  "Bool": "Lean's two-valued type. In B1 it serves as the two colours."
+ },
+ "headlineFiles": [
+  "leanproblems/Putnam2025/putnam_2025_a2.lean",
+  "leanproblems/Putnam2025/putnam_2025_a3.lean",
+  "leanproblems/Putnam2025/putnam_2025_a5.lean",
+  "leanproblems/Putnam2025/putnam_2025_b3.lean",
+  "leanproblems/Putnam2025/putnam_2025_b4.lean",
+  "leanproblems/Minif2f/amc12a_2021_p7.lean"
+ ]
+}
