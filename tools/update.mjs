@@ -24,7 +24,7 @@ function card(p) {
   const href = p.tooling ? `https://github.com/${p.repo}` : live ? `${p.slug}/` : p.demo ? p.demo.url : p.url || `https://github.com/${p.repo}`; // stubs link upstream until their explainer is live
   const who = p.members.map((m) => `<a href="${esc(m.profile)}">${esc(m.name)}</a>`).join(" &amp; ");
   const talk = p.talk ? ` · talk at Lean NYC: <a href="${esc(p.talkUrl || "https://lean.nyc/calendar")}">${esc(p.talk)}</a>` : "";
-  const lic = p.license ? `licence ${esc(p.license)}` : p.slug ? "no licence file (source not reproduced)" : "";
+  const lic = p.license ? `licence ${esc(p.license)}` : p.own && p.slug ? "no licence file (source shown with the author's permission)" : p.slug ? "no licence file (source not reproduced)" : "";
   const desc = p.tooling ? p.toolDesc : (s && s.desc) || p.description;
   const extra = (p.sites || []).map((x) => `<a class="btn gh" href="${esc(x.url)}">${esc(x.label)} <span class="host">${esc(new URL(x.url).host)}</span> ↗</a>`).join("");
   const btns = p.tooling ? [
