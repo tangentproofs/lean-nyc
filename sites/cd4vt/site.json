@@ -1,0 +1,94 @@
+{
+ "slug": "cd4vt",
+ "repo": "kejace/cd4vt",
+ "submodule": "projects/kejace-cd4vt",
+ "sha": "d077071310aa4003c9aede69a007cea04438290f",
+ "members": [
+  "Kristoffer Josefsson"
+ ],
+ "authors": "Kristoffer Josefsson",
+ "authorUrl": "https://github.com/kejace",
+ "license": {
+  "spdx": "Apache-2.0",
+  "name": "Apache License 2.0",
+  "file": "LICENSE"
+ },
+ "title": "cd4vt, explained",
+ "brand": "cd4vt <em>explained</em>",
+ "h1": "A converse to the discrete four-vertex theorem: which radius sequences come from convex polygons",
+ "lead": "Take any cyclic list of n ≥ 4 positive numbers with at least two local maxima and two local minima (a flat run counts once). Some strictly convex polygon has exactly these numbers as the radii of the circles through its consecutive vertex triples, with every circle's centre inside its vertex angle. That answers Tabachnikov's Problem 2. With Dahlberg's discrete four-vertex theorem, which the project also proves, this is an exact characterization. The polygon can be chosen to vary C¹ locally, but an explicit path of hexagon data shows it can't be chosen continuously globally. The Lean source has no <code>sorry</code> and no <code>axiom</code>. It was not built for this site.",
+ "desc": "An unofficial plain-English tour of Kristoffer Josefsson's Lean 4 + Mathlib formalization of a converse to the discrete four-vertex theorem (Tabachnikov's Problem 2), with Dahlberg's forward theorem, local C¹ and global continuity results, and the side-tangent-circle analogue.",
+ "startNote": "<p>Start with the headline <a href=\"#/node/Discrete.tabachnikov_converse_geometric\">every two-max, two-min radius sequence is realized</a> and its two key definitions, <a href=\"#/node/Discrete.IsPlateauTwoMaxTwoMin\">two plateau maxima and minima</a> and <a href=\"#/node/Discrete.IsCoherentConvexPolygon\">coherent convex polygon</a>. Then read the <a href=\"#/node/Discrete.tabachnikov_radius_characterization\">iff version</a>. To see how the proof works, read <a href=\"#/node/Discrete.turningAngle\">turning angles</a>, <a href=\"#/node/Discrete.tabachnikovProblem2_all\">Problem 2 in curvature form</a> and the <a href=\"#/node/Discrete.RegularFourAnchor\">regular four-edge anchor</a>. The continuity results are <a href=\"#/node/Discrete.localContinuousRealization_of_dfv\">local C¹</a> and <a href=\"#/node/Discrete.GlobalContinuity.no_continuous_regular_hexagon_path\">no global choice</a>. The tangent-circle analogue is <a href=\"#/node/Discrete.SideTangent.realizesSideTangent_iff_admissible\">here</a>.</p>",
+ "sizeNote": "About 83,000 lines of Lean in 188 library files (Gluck/Discrete ≈ 48,000, Gluck/Forward ≈ 27,000, smooth converse ≈ 5,600, ForMathlib ≈ 2,400). It targets Lean v4.35.0-rc3 with Mathlib at the same tag.",
+ "agentCtx": "A Lean 4 + Mathlib formalization by Kristoffer Josefsson answering Tabachnikov's Problem 2: every positive cyclic sequence with two plateau maxima and two plateau minima is the vertex-circumradius sequence of a coherent strictly convex polygon (n ≥ 4), with Dahlberg's discrete four-vertex theorem as the converse, local C¹ / no global continuous realization results, and the analogous side-tangent-circle (Wegner) characterization.",
+ "roots": [
+  "Gluck",
+  "ForMathlib"
+ ],
+ "ns": "Gluck.",
+ "headlines": [
+  "Discrete.tabachnikov_converse_geometric",
+  "Discrete.tabachnikov_radius_characterization",
+  "Discrete.tabachnikovProblem2_all",
+  "Discrete.localContinuousRealization_of_dfv",
+  "Discrete.GlobalContinuity.no_continuous_regular_hexagon_path",
+  "Discrete.SideTangent.realizesSideTangent_iff_admissible"
+ ],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool",
+  "Complex",
+  "ZMod",
+  "Filter",
+  "Metric"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String",
+  "ZMod",
+  "NeZero",
+  "ContinuousOn",
+  "ContDiffOn",
+  "IsOpen",
+  "segment",
+  "openSegment",
+  "dist",
+  "inner"
+ ],
+ "gloss": {
+  "ZMod": "Mathlib's <code>ZMod n</code>: the integers mod n. Indexing by <code>ZMod n</code> makes a sequence cyclic, so <code>i - 1</code> and <code>i + 1</code> wrap around.",
+  "NeZero": "<code>[NeZero n]</code>: a type-class assumption that n ≠ 0, needed to treat <code>ZMod n</code> as a finite set of indices.",
+  "Set.Icc": "<code>Set.Icc a b</code>: the closed interval [a, b].",
+  "ContinuousOn": "<code>ContinuousOn f s</code>: f is continuous at every point of s, as a function restricted to s.",
+  "ContDiffOn": "<code>ContDiffOn ℝ 1 f s</code>: f is continuously differentiable (C¹) on s.",
+  "IsOpen": "<code>IsOpen s</code>: s is an open set.",
+  "segment": "<code>segment ℝ a b</code>: the closed straight segment from a to b. <code>openSegment</code> leaves out the endpoints.",
+  "Real.pi": "π.",
+  "Real.arcsin": "The inverse sine, with values in [−π/2, π/2].",
+  "Finset.range": "<code>Finset.range k</code> = {0, 1, …, k − 1}, used for finite sums."
+ },
+ "headlineFiles": [
+  "Gluck/Statements.lean",
+  "Gluck/Discrete/TabachnikovConverse.lean",
+  "Gluck/Discrete/TabachnikovCharacterization.lean",
+  "Gluck/Discrete/TabachnikovFourActive.lean",
+  "Gluck/Discrete/LocalContinuity.lean",
+  "Gluck/Discrete/GlobalContinuity/EnclosingCircleObstruction.lean",
+  "Gluck/Discrete/SideTangentConverse.lean",
+  "Gluck/Discrete/SideTangentForward.lean"
+ ]
+}
