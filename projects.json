@@ -328,7 +328,8 @@
    "talkUrl": "https://lean.nyc/blog/prismriver",
    "description": "(Mirror) A Music formalization library and DSL in Lean 4",
    "license": "Apache-2.0",
-   "explainer": false
+   "explainer": true,
+   "nodeCount": 41
   },
   {
    "slug": null,
