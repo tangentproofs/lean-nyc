@@ -18,7 +18,8 @@
    "talkUrl": "https://lean.nyc/blog/numina-fuse",
    "description": "",
    "license": null,
-   "explainer": false
+   "explainer": true,
+   "nodeCount": 29
   },
   {
    "slug": "etc-fp-bitexact",
@@ -101,7 +102,8 @@
    "talkUrl": null,
    "description": "",
    "license": null,
-   "explainer": false
+   "explainer": true,
+   "nodeCount": 33
   },
   {
    "slug": "lean-lr",
@@ -341,7 +343,8 @@
    "talkUrl": null,
    "description": "[NeurIPS 2026] Audited, Corrected, and Verified Version of The ProofNet Benchmark in Lean4",
    "license": "Apache-2.0",
-   "explainer": false
+   "explainer": true,
+   "nodeCount": 19
   },
   {
    "slug": "prismriver",
