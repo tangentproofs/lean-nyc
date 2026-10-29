@@ -21,7 +21,7 @@ snap = C.get("snapshot")  # explainer of a public website snapshot rather than a
 if snap:
     gh = snap["url"]; sha = snap["fetched"]
     lic_url = lic.get("url"); lic_link = f'<a href="{lic_url}" target="_blank" rel="noopener">{e(lic["name"])}</a>'
-    handling = "Only short Lean goal statements are quoted, each attributed to and linked to its page on " + e(snap["name"]) + "."
+    handling = "This site quotes only short attributed phrases from " + e(snap["name"]) + " and links to its pages."
     banner = f'''<div class="disclaimer" role="note"><b>Unofficial explainer.</b> This is not official documentation for <a href="{gh}" target="_blank" rel="noopener">{e(snap["name"])}</a>. It was written independently (AI-assisted) from the public site as fetched on {e(sha)}, and may contain errors. See the original site by {author}.<span class="lic">Licence: {lic_link}. {handling}</span></div>'''
 credit = f'The Lean project <a href="{gh}" target="_blank" rel="noopener">{e(repo)}</a> is by {author}.'
 if snap: credit = f'<a href="{gh}" target="_blank" rel="noopener">{e(snap["name"])}</a> is by {author}; each mission belongs to its captain and contributors.'
