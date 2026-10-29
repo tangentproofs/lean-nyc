@@ -60,8 +60,8 @@
    "talkUrl": "https://lean.nyc/calendar",
    "description": "A Lean 4 proof that a WHILE-language interpreter, written in C and compiled to bare-metal RISC-V, halts with a program's output exactly when the big-step semantics derives it, run on the Sail-generated RISC-V model.",
    "license": null,
-   "explainer": false,
-   "nodeCount": null
+   "explainer": true,
+   "nodeCount": 50
   },
   {
    "slug": "leantex",
@@ -528,8 +528,8 @@
    "talkUrl": "https://lean.nyc/blog/formal-learning-theory",
    "description": "A Lean 4 formalization of the fundamental theorem of statistical learning: PAC learnability and the VC dimension.",
    "license": "Apache-2.0",
-   "explainer": false,
-   "nodeCount": null
+   "explainer": true,
+   "nodeCount": 50
   }
  ],
  "others": [

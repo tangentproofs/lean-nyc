@@ -6,7 +6,7 @@ for p in pj["projects"]:
     s = p.get("slug")
     if not s or not os.path.exists(f"sites/{s}/site.json"): continue
     n = 0
-    sys.path.insert(0, f"sites/{s}/nodes_src")
+    sys.modules.pop("_common", None); sys.path.insert(0, f"sites/{s}/nodes_src")
     for f in sorted(glob.glob(f"sites/{s}/nodes_src/*.py")):
         if os.path.basename(f).startswith("_"): continue
         spec = importlib.util.spec_from_file_location(f"m_{s}_{os.path.basename(f)[:-3]}", f); m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
