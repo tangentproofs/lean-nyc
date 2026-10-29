@@ -1,0 +1,82 @@
+{
+ "slug": "prismriver",
+ "repo": "lenianiva/Prismriver",
+ "submodule": "projects/lenianiva-prismriver",
+ "sha": "b54efbfaf259e9cf4d6186c8fb7998456821d568",
+ "members": [
+  "Claire Wang"
+ ],
+ "authors": "Leni Aniva and Claire Wang",
+ "authorUrl": "https://github.com/lenianiva",
+ "license": {
+  "spdx": "Apache-2.0",
+  "name": "Apache License 2.0",
+  "file": "LICENSE"
+ },
+ "title": "Prismriver, explained",
+ "brand": "Prismriver <em>explained</em>",
+ "h1": "Music theory in Lean: pitches, intervals and the dihedral group of triads",
+ "lead": "Prismriver is mostly a <em>music library</em> (a note-entry DSL, scores, MusicXML and Alda output, algorithmic composition). Its proved core is small and clean: intervals act on spelled pitches like an abelian group acting on a space, and every pitch-level transposition or inversion lands exactly on the matching element of the 12-element-rotation dihedral group acting on (pitch class, major/minor) pairs.",
+ "desc": "An unofficial plain-English guide to Prismriver, Leni Aniva and Claire Wang's Lean 4 library for music theory and algorithmic composition: what its theorems about intervals, transposition and the dihedral group D12 actually say.",
+ "startNote": "<p>Prismriver is a music library first and a theorem library second. Start with <a href=\"#/node/Prismriver.Classical.Interval\">Interval</a> and <a href=\"#/node/Prismriver.Classical.Pitch\">Pitch</a> (how a note is spelled), then <a href=\"#/node/Prismriver.Classical.instance_690\">the Torsor instance</a> (intervals really act on pitches). The headline is <a href=\"#/node/Prismriver.Theory.Dihedral.transposeAction_toDihedral_triad\">transposeAction_toDihedral_triad</a>: transposing or inverting a pitch matches the D12 action on pitch classes.</p>",
+ "sizeNote": "About 3,600 lines of Lean in 23 files under Prismriver/; roughly 50 theorems, nearly all in four files.",
+ "agentCtx": "Prismriver: a Lean 4 music-theory and algorithmic-composition library (pitches, intervals, scales, scores, LilyPond-like DSL, MusicXML/Alda IO) with proofs that intervals act on pitches and that transposition/inversion is compatible with the dihedral group D12.",
+ "roots": [
+  "Prismriver"
+ ],
+ "ns": "",
+ "headlines": [
+  "Prismriver.Theory.Dihedral.transposeAction_toDihedral_triad",
+  "Prismriver.Theory.Dihedral.instance_155",
+  "Prismriver.transposeAction_mul_smul",
+  "Prismriver.Classical.instance_690",
+  "Prismriver.pitchCong_equivalence"
+ ],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool",
+  "ZMod",
+  "DihedralGroup",
+  "MulAction",
+  "Prod"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String",
+  "ZMod",
+  "DihedralGroup",
+  "MulAction",
+  "Equivalence",
+  "Rat"
+ ],
+ "gloss": {
+  "DihedralGroup": "Mathlib's <code>DihedralGroup n</code>: the symmetries of a regular n-gon, with n rotations <code>r i</code> and n reflections <code>sr i</code> (indices in <code>ZMod n</code>). Here n = 12, the clock of pitch classes.",
+  "DihedralGroup.r": "A rotation <code>r i</code> of the 12-gon; musically, transposition by i semitones.",
+  "DihedralGroup.sr": "A reflection <code>sr i</code> of the 12-gon; musically, an inversion (mirror) of pitch classes.",
+  "ZMod": "<code>ZMod 12</code>: the integers modulo 12, i.e. the twelve pitch classes C, C♯, …, B with clock arithmetic.",
+  "MulAction": "A group action: a way for each group element g to move points x to g • x, with 1 • x = x and (g·h) • x = g • (h • x).",
+  "Equivalence": "Lean core's <code>Equivalence r</code>: r is reflexive, symmetric and transitive.",
+  "Int": "The integers ℤ.",
+  "Prod": "Ordered pairs; <code>A × B</code>."
+ },
+ "headlineFiles": [
+  "Prismriver/Theory/Dihedral.lean",
+  "Prismriver/Repr/Dihedral.lean",
+  "Prismriver/Repr/Classical.lean",
+  "Prismriver/Repr/Scale.lean"
+ ]
+}
