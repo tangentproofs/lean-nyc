@@ -19,21 +19,22 @@ function card(p) {
   const s = info(p), live = p.explainer && s;
   const name = p.url ? new URL(p.url).host : p.repo.split("/")[1];
   const hue = [...name].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7) % 6;
-  const href = live ? `${p.slug}/` : p.url || `https://github.com/${p.repo}`;
+  const href = live ? `${p.slug}/` : p.url || `https://github.com/${p.repo}`; // stubs link upstream until their explainer is live
   const who = p.members.map((m) => `<a href="${esc(m.profile)}">${esc(m.name)}</a>`).join(" &amp; ");
   const talk = p.talk ? ` · talk at Lean NYC: <a href="${esc(p.talkUrl || "https://lean.nyc/calendar")}">${esc(p.talk)}</a>` : "";
   const lic = p.license ? `licence ${esc(p.license)}` : p.slug ? "no licence file (source not reproduced)" : "";
   const desc = (s && s.desc) || p.description;
   const btns = [
     live ? `<a class="btn site" href="${p.slug}/"><b>Plain-English informalization</b> <span class="host">unofficial explainer</span> →</a>`
+      : p.slug ? `<span class="btn site soon"><b>Explainer in progress</b></span>`
       : p.url ? `<a class="btn site" href="${esc(p.url)}"><b>Project site</b> <span class="host">${esc(new URL(p.url).host)}</span> →</a>`
       : `<span class="btn site soon">Explainer in progress</span>`,
-    live && p.url ? `<a class="btn gh" href="${esc(p.url)}">${esc(new URL(p.url).host)} ↗</a>`
+    p.url ? `<a class="btn gh" href="${esc(p.url)}">${esc(new URL(p.url).host)} ↗</a>`
       : `<a class="btn gh" href="https://github.com/${esc(p.repo)}">${GH} ${esc(p.repo)}</a>`].join("");
   return `<article class="card inf">
-  <a class="thumb ph c${hue}" href="${esc(href)}" aria-label="${esc(name)}"><span class="ph-name">${esc(name)}</span><span class="ph-note">${live ? `${p.nodeCount ?? ""} explained nodes` : p.url ? "project site" : "explainer coming"}</span></a>
+  <a class="thumb ph c${hue}" href="${esc(href)}" aria-label="${esc(name)}"><span class="ph-name">${esc(name)}</span><span class="ph-note">${live ? `${p.nodeCount ?? ""} explained nodes` : p.slug ? "explainer in progress" : p.url ? "project site" : "explainer coming"}</span></a>
   <div class="body">
-    <h3><a href="${esc(href)}">${esc(name)}</a> <span class="pill">${p.slug ? "Lean" : "site"}</span></h3>
+    <h3><a href="${esc(href)}">${esc(name)}</a> <span class="pill">${p.url ? "site" : "Lean"}</span>${p.slug && !live ? ` <span class="pill soon">explainer in progress</span>` : ""}</h3>
     <p class="who">${who}</p>
     <p>${esc(desc)}</p>
     <p class="meta">Upstream: ${p.url ? `<a href="${esc(p.url)}">${esc(new URL(p.url).host)}</a>` : `<a href="https://github.com/${esc(p.repo)}">github.com/${esc(p.repo)}</a>`} by ${esc(p.authors)}${p.sha ? ` · pinned at <code>${p.sha.slice(0, 7)}</code>` : ""}${lic ? ` · ${lic}` : ""}${talk}</p>

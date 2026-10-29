@@ -48,3 +48,5 @@ h2 { font-size: 1.3rem; margin-top: 2.2rem; border-bottom: 1px solid var(--line)
 .who { color: var(--yellow); font-size: .92rem; margin: .1rem 0 .4rem; } .who a { color: var(--yellow); }
 .meta { color: var(--dim); font-size: .8rem; margin: .3rem 0 .5rem; } .meta a { color: var(--dim); }
 .btn.soon { opacity: .6; cursor: default; }
+.pill.soon { background: #fff3cd; color: #7a5200; border: 1px solid #e0b84c; }
+.btn.site.soon { opacity: 1; background: #fff3cd; color: #7a5200; border: 1px dashed #e0b84c; }
