@@ -26,10 +26,11 @@ if snap:
     lic_url = lic.get("url"); lic_link = f'<a href="{lic_url}" target="_blank" rel="noopener">{e(lic["name"])}</a>'
     handling = "This site quotes only short attributed phrases from " + e(snap["name"]) + " and links to its pages."
     banner = f'''<div class="disclaimer" role="note"><b>Unofficial explainer.</b> This is not official documentation for <a href="{gh}" target="_blank" rel="noopener">{e(snap["name"])}</a>. It was written independently (AI-assisted) from the public site as fetched on {e(sha)}, and may contain errors. See the original site by {author}.<span class="lic">Licence: {lic_link}. {handling}</span></div>'''
-credit = f'The Lean project <a href="{gh}" target="_blank" rel="noopener">{e(repo)}</a> is by {author}.'
+lang = C.get("lang", "Lean")
+credit = f'The {lang} project <a href="{gh}" target="_blank" rel="noopener">{e(repo)}</a> is by {author}.'
 if snap: credit = f'<a href="{gh}" target="_blank" rel="noopener">{e(snap["name"])}</a> is by {author}; each mission belongs to its captain and contributors.'
 footer = (f'{credit} Licence: {lic_link}. This explainer is unofficial and AI-assisted (written by Claude, scaffolded by Grok Bot), '
-          + (f'from the public site as fetched on {e(sha)}; it is not' if snap else f'from commit <code>{sha[:7]}</code>; it is not') + f' reviewed by the project\'s authors and may be wrong. The Lean is the ground truth. ' +
+          + (f'from the public site as fetched on {e(sha)}; it is not' if snap else f'from commit <code>{sha[:7]}</code>; it is not') + f' reviewed by the project\'s authors and may be wrong. {"The Lean is the ground truth" if lang == "Lean" else "The source is the ground truth"}. ' +
           f'Part of the <a href="../">Lean NYC member-project index</a>, an independent fan index. Progress is stored only in this browser.')
 cfg = {"slug": C["slug"], "repo": repo, "sha": sha, "title": C["title"], "brand": C["brand"], "h1": C["h1"], "lead": C["lead"],
        "creditHtml": credit, "sizeNote": C.get("sizeNote", ""), "startNote": C.get("startNote", ""), "agentCtx": C.get("agentCtx", C["desc"]),
@@ -95,7 +96,7 @@ txt += f'''
 
 ## Credit, licence and status
 
-- **The project:** [{snap["name"] if snap else repo}]({gh}) by {C["authors"]}{f" ({C['authorUrl']})" if C.get("authorUrl") else ""}. Everything mathematical and every line of Lean is theirs.
+- **The project:** [{snap["name"] if snap else repo}]({gh}) by {C["authors"]}{f" ({C['authorUrl']})" if C.get("authorUrl") else ""}. Everything mathematical and every line of {lang} is theirs.
 - **This explainer:** unofficial and independent. Written by Claude (AI) {f"from the public site as fetched on {sha}" if snap else f"from the public source at commit [`{sha[:7]}`]({gh}/tree/{sha})"}, scaffolded and checked by Grok Bot for the [Lean NYC member-project index](../). {"Requested by the author, but not reviewed by him line by line" if own else "Not reviewed or endorsed by the project's authors"}, and it may contain errors. Every node is `review: draft`.
 - **Licence:** {f"[{lic['name']}]({lic_url})" if lic_url else lic["name"]}. {handling}
 - **Corrections:** open an issue or pull request on [tangentproofs/lean-nyc](https://github.com/tangentproofs/lean-nyc). Authors who would like this page changed or taken down: say so there and it will be done.
