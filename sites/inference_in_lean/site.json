@@ -1,0 +1,73 @@
+{
+ "slug": "inference_in_lean",
+ "repo": "SamuelLess/inference_in_lean",
+ "submodule": "projects/samuelless-inference_in_lean",
+ "sha": "1594d7ceddf23a0afe47d5867b1e4c58c0936e9f",
+ "members": [
+  "Samuel Leßmann"
+ ],
+ "authors": "Norman Lohrer and Samuel Leßmann",
+ "authorUrl": "https://github.com/SamuelLess",
+ "license": {
+  "spdx": "GPL-3.0",
+  "name": "GNU GPL v3.0",
+  "file": "LICENSE"
+ },
+ "title": "inference_in_lean, explained",
+ "brand": "inference in lean <em>explained</em>",
+ "h1": "First-order logic and resolution in Lean 4: why every resolution step preserves truth",
+ "lead": "Resolution, the inference rule behind many automated theorem provers, never derives a false clause from true ones. The project proves this <strong>soundness</strong> for ground (variable-free) resolution and factorisation, and for the general first-order versions that use a most general unifier. It also proves that a whole proof is sound once each of its single steps is. Those proofs are complete in the source. The only <code>sorry</code> is in the hard direction of the unification theorem (every unifiable problem has a most general unifier), and the soundness proofs don't use it.",
+ "desc": "An unofficial plain-English tour of Norman Lohrer and Samuel Leßmann's Lean 4 formalisation of first-order logic (syntax, semantics, substitutions, unifiers) and of the soundness of ground and general resolution, following Chapter 3 of LMU's Automated Theorem Proving lecture notes.",
+ "startNote": "<p>Start with the headline, <a href=\"#/node/Resolution.generalResolution_soundness\">soundness of general resolution</a>, and the two rules it covers: <a href=\"#/node/Resolution.GeneralResolutionRule\">resolution</a> and <a href=\"#/node/Resolution.GeneralFactorizationRule\">factorisation</a>. To see what “sound” means, read <a href=\"#/node/Inferences.Soundness\">Soundness</a>, <a href=\"#/node/Models.ClauseSetEntails\">clause-set entailment</a> and <a href=\"#/node/Inferences.generalSoundness_of_soundness\">why sound steps give sound proofs</a>. The building blocks are <a href=\"#/node/Syntax.Term\">terms</a>, <a href=\"#/node/Syntax.Clause\">clauses</a>, <a href=\"#/node/Syntax.Substitution\">substitutions</a> and <a href=\"#/node/Semantics.Formula.eval\">evaluation</a>.</p>",
+ "sizeNote": "About 2,200 lines of Lean in 7 library files (plus about 330 lines of course exercises, not covered here). It targets Lean 4.34 (release candidate) with Mathlib.",
+ "agentCtx": "A Lean 4 + Mathlib formalisation of first-order logic syntax and semantics, substitutions and unifiers, inference systems and proofs, and the soundness of ground and general (unifier-based) resolution and factorisation, following Chapter 3 of LMU's Automated Theorem Proving notes.",
+ "roots": [
+  "InferenceInLean/A_Syntax.lean",
+  "InferenceInLean/B_Semantics.lean",
+  "InferenceInLean/C_Models.lean",
+  "InferenceInLean/D_Unification.lean",
+  "InferenceInLean/E_Inference.lean",
+  "InferenceInLean/F_Resolution.lean",
+  "InferenceInLean/G_Examples.lean"
+ ],
+ "ns": "",
+ "headlines": [
+  "Resolution.generalResolution_soundness",
+  "Resolution.groundResolution_soundness",
+  "Inferences.generalSoundness_of_soundness",
+  "Semantics.Formula.eval_of_closed",
+  "Syntax.idempotent_iff_inter_empty",
+  "Unification.unifiable_iff_mgu_idempot"
+ ],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String"
+ ],
+ "gloss": {
+  "Set": "Mathlib's <code>Set α</code>: a set of elements of type α, i.e. a predicate on α. Used here for sets of clauses and sets of free variables.",
+  "List": "Lean's <code>List α</code>: a finite ordered list. Clauses are lists of literals, and function arguments are lists of terms."
+ },
+ "headlineFiles": [
+  "InferenceInLean/F_Resolution.lean",
+  "InferenceInLean/E_Inference.lean",
+  "InferenceInLean/D_Unification.lean"
+ ]
+}
