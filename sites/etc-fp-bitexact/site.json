@@ -1,0 +1,83 @@
+{
+ "slug": "etc-fp-bitexact",
+ "repo": "evolvingtech/etc-fp-bitexact",
+ "submodule": "projects/evolvingtech-etc-fp-bitexact",
+ "sha": "036fffe0ab69ff3e80976cbacfa9bf4d530dd90b",
+ "members": [
+  "Loren Abdulezer"
+ ],
+ "authors": "Evolving Technologies Corporation (Loren Abdulezer)",
+ "authorUrl": "https://github.com/evolvingtech",
+ "license": {
+  "spdx": "Apache-2.0",
+  "name": "Apache License 2.0",
+  "file": "LICENSE",
+  "notice": "NOTICE"
+ },
+ "title": "etc-fp-bitexact, explained",
+ "brand": "etc-fp-bitexact <em>explained</em>",
+ "h1": "Will two vendors' floating-point handoffs agree, bit for bit?",
+ "lead": "A small, Mathlib-free Lean library that turns two invented interface specs into one yes-or-no question about 16-bit floating-point bit patterns, and then settles it. When the answer is no, the proof names a concrete input that breaks it. In this demo the culprit is the tiniest subnormal number, <code>0x0001</code>, which a spec that says nothing about subnormal handling allows to be flushed to zero. Every “yes” is re-checked from a stored SAT certificate, so nobody needs to re-run the solver.",
+ "desc": "A plain-English tour of etc-fp-bitexact by Evolving Technologies Corporation: a Lean 4 demo that checks bit-exact compatibility of invented binary16 interface specs with bv_decide and replays stored LRAT certificates without a SAT solver.",
+ "startNote": "<p>Start with the <a href=\"#/node/Core.Statement.compatStmtOn\">compatibility statement</a>, the one question every Configuration-1 verdict asks. Then read the four verdicts in order: <a href=\"#/node/Config1.verdict_compatible\">compatible</a>, <a href=\"#/node/Config1.verdict_divergent\">divergent</a>, <a href=\"#/node/Config1.verdict_silence\">silence</a> and the <a href=\"#/node/Config1.verdict_domain_restricted\">domain-restricted fix</a>. The <a href=\"#/node/Config3.verdict_versions_incompatible\">versions</a> and <a href=\"#/node/Arith.mul_true\">multiplier</a> results reuse the same pattern. Everything here is a synthetic fixture; the project formalizes no real interface.</p>",
+ "sizeNote": "About 1,300 lines of Lean in 18 files (about 800 of them in the proof core this site covers), plus four cached LRAT certificates.",
+ "agentCtx": "etc-fp-bitexact (Evolving Technologies Corporation): a Mathlib-free Lean 4 demo that models binary16 bit patterns as BitVec 16, builds interface-compatibility propositions from mock ICD fixtures, and discharges them with bv_decide/bv_check against cached LRAT certificates.",
+ "roots": [
+  "ETCFPBitexact/Core",
+  "ETCFPBitexact/Config1.lean",
+  "ETCFPBitexact/Config3.lean",
+  "ETCFPBitexact/Arith",
+  "ETCFPBitexact/DivergenceWitness.lean",
+  "ETCFPBitexact/Smoke.lean"
+ ],
+ "ns": "ETCFPBitexact.",
+ "headlines": [
+  "Config1.verdict_compatible",
+  "Config1.verdict_silence",
+  "Config1.verdict_domain_restricted",
+  "Config3.verdict_versions_incompatible",
+  "Arith.mul_true",
+  "Arith.mul_false"
+ ],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool",
+  "BitVec"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String",
+  "BitVec",
+  "True",
+  "Not",
+  "Ne",
+  "Exists"
+ ],
+ "gloss": {
+  "BitVec": "<code>BitVec n</code> (Lean core): a fixed-width word of <i>n</i> bits. Arithmetic wraps around modulo 2<sup><i>n</i></sup>, and <code>&amp;&amp;&amp;</code>, <code>|||</code>, <code>^^^</code>, <code>&lt;&lt;&lt;</code> are bitwise AND, OR, XOR and shift-left.",
+  "Bool": "<code>Bool</code>: the two values <code>true</code>/<code>false</code>. Here it doubles as the flush-to-zero flag.",
+  "Not": "<code>¬ P</code>: P is false (formally, P implies <code>False</code>).",
+  "Ne": "<code>a ≠ b</code>: a and b are different values.",
+  "Exists": "<code>∃ x, P x</code>: some x satisfies P. The proof here names it explicitly.",
+  "True": "<code>True</code>: the trivially true proposition, proved by <code>True.intro</code>."
+ },
+ "headlineFiles": [
+  "ETCFPBitexact/Config1.lean",
+  "ETCFPBitexact/Config3.lean",
+  "ETCFPBitexact/Arith/Audit.lean"
+ ]
+}
