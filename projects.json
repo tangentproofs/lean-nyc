@@ -321,7 +321,8 @@
    "talkUrl": null,
    "description": "SampCert : Verified Differential Privacy",
    "license": "Apache-2.0",
-   "explainer": false
+   "explainer": true,
+   "nodeCount": 35
   },
   {
    "slug": "proofnet-verified",
