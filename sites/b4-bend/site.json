@@ -1,0 +1,227 @@
+{
+ "slug": "b4-bend",
+ "repo": "tangentstorm/b4",
+ "submodule": "projects/tangentstorm-b4",
+ "sha": "6bf9a57996a8d7ddd9b07adff2e40375e12f0294",
+ "members": [
+  "Michal Wallace"
+ ],
+ "authors": "Michal Wallace",
+ "authorUrl": "https://github.com/tangentstorm/b4",
+ "license": {
+  "spdx": null,
+  "name": "No licence file",
+  "file": null
+ },
+ "title": "b4 in Bend, explained",
+ "brand": "b4-bend <em>explained</em>",
+ "h1": "The b4 virtual machine in Bend: a strict interpreter, 94 laws about it with proofs for Bend's checker, and fleets of 16,384 machines",
+ "lead": "imp/bend is a b4 interpreter in which every failure is a named <strong>fault</strong> that leaves the machine untouched. Next to it, LAWS.bend states <strong>94 laws</strong> about single instructions and the scheduler, and PROOF.bend proves each one, nearly all by Bend's <code>{==}</code>: both sides compute to the same term. The project's Makefile and test script run Bend's checker on them, but nothing was run for this site. The same interpreter then drives three demos that build a balanced tree of <strong>16,384 machines</strong> so Bend can evaluate them in parallel: a square-root search, a Mandelbrot picture written straight to PNG, and a live shell. <strong>No law is about a whole program or a fleet</strong>, and there are no channels between machines.",
+ "desc": "An unofficial plain-English code tour of the Bend implementation of Michal Wallace's b4 virtual machine: the strict fault-checking interpreter, its 94 laws and their proofs by computation, and the 16,384-machine fleets behind a square-root search, a Mandelbrot PNG and a live shell.",
+ "startNote": "<p>This site explains <strong>Bend</strong> code, not Lean, so its nodes are <em>concepts</em> that each link to a line range of <code>imp/bend</code> at the pinned commit. Read the <a href=\"#/roadmap\">Roadmap</a> for a file-by-file order. Then start with <a href=\"#/node/VMStep\">one step of the machine</a>, then <a href=\"#/node/Laws\">the laws</a>, then the three fleet demos: <a href=\"#/node/Fleet16384\">the square-root search</a>, <a href=\"#/node/Mandelbrot\">Mandelbrot</a> and <a href=\"#/node/LiveShell\">the live shell</a>. Claims are labelled <strong>CHECKED-BY-BEND</strong> (a proof in PROOF.bend that the project's own check runs), <strong>TESTED</strong> (a tanco test or a demo with recorded output) or <strong>STATED</strong> (a comment or design intent with no check). The sister site <a href=\"../b4-lean/\">b4-lean</a> covers the Lean implementation.</p>",
+ "sizeNote": "About 4,000 lines in imp/bend: an 816-line interpreter (vm.bend), 1,121 lines of laws and 328 of proofs, a 440-line b4i console, 182 lines of text helpers, three fleet demos (70, 371 and 297 lines), a 30-line fleet test, a 329-line extra test file, and a small C/JS stdin poller. 24 concept nodes.",
+ "agentCtx": "b4-bend (Michal Wallace's b4 repo, imp/bend): the b4 Forth-like VM written in the Bend language, with a strict fault-checking interpreter, 94 laws in LAWS.bend proved in PROOF.bend (mostly by {==}, computation), a b4i console tested by tanco, and fleets of 16,384 machines for a square-root search, a Mandelbrot PNG and a live shell.",
+ "roots": [],
+ "ns": "",
+ "headlines": [
+  "VMStep",
+  "Laws",
+  "Fleet16384",
+  "Mandelbrot",
+  "LiveShell"
+ ],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String"
+ ],
+ "ownProject": true,
+ "gloss": {},
+ "headlineFiles": [],
+ "concepts": {
+  "MachineState": {
+   "deps": [],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/vm.bend#L1-L26"
+  },
+  "Arithmetic": {
+   "deps": [
+    "MachineState"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/vm.bend#L39-L83"
+  },
+  "Memory": {
+   "deps": [
+    "MachineState"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/vm.bend#L85-L125"
+  },
+  "ControlFlow": {
+   "deps": [
+    "Memory",
+    "Arithmetic"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/vm.bend#L140-L168"
+  },
+  "RegisterOps": {
+   "deps": [
+    "Memory",
+    "ControlFlow"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/vm.bend#L181-L213"
+  },
+  "FloatOps": {
+   "deps": [
+    "MachineState"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/vm.bend#L222-L275"
+  },
+  "Device": {
+   "deps": [
+    "MachineState"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/vm.bend#L170-L179"
+  },
+  "Microcode": {
+   "deps": [
+    "Arithmetic",
+    "Memory",
+    "ControlFlow",
+    "RegisterOps",
+    "FloatOps",
+    "Device"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/vm.bend#L277-L515"
+  },
+  "Validation": {
+   "deps": [
+    "Microcode",
+    "Memory"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/vm.bend#L536-L760"
+  },
+  "VMStep": {
+   "deps": [
+    "Validation",
+    "Microcode",
+    "MachineState",
+    "TestsOrg"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/vm.bend#L757-L802"
+  },
+  "FleetTree": {
+   "deps": [
+    "VMStep"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/vm.bend#L804-L815"
+  },
+  "FleetTest": {
+   "deps": [
+    "FleetTree"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/fleet-test.bend#L1-L30"
+  },
+  "Fleet16384": {
+   "deps": [
+    "FleetTree",
+    "VMStep",
+    "Microcode",
+    "FleetTest"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/swarm.bend#L1-L70"
+  },
+  "MandelbrotProgram": {
+   "deps": [
+    "FloatOps",
+    "RegisterOps",
+    "ControlFlow"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/mandelbrot.bend#L37-L54"
+  },
+  "PngWriter": {
+   "deps": [],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/mandelbrot.bend#L141-L371"
+  },
+  "Mandelbrot": {
+   "deps": [
+    "MandelbrotProgram",
+    "PngWriter",
+    "VMStep",
+    "Fleet16384"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/mandelbrot.bend#L1-L139"
+  },
+  "TextHelpers": {
+   "deps": [
+    "MachineState"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/text.bend#L1-L182"
+  },
+  "B4iShell": {
+   "deps": [
+    "VMStep",
+    "TextHelpers"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/b4i.bend#L1-L439"
+  },
+  "PollStdin": {
+   "deps": [],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/poll_stdin.c#L1-L43"
+  },
+  "FleetZipper": {
+   "deps": [
+    "FleetTree"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/live.bend#L15-L151"
+  },
+  "LiveShell": {
+   "deps": [
+    "FleetZipper",
+    "PollStdin",
+    "B4iShell",
+    "VMStep"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/live.bend#L1-L297"
+  },
+  "TestsOrg": {
+   "deps": [
+    "B4iShell",
+    "Validation"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/tests.org#L1-L329"
+  },
+  "Proofs": {
+   "deps": [
+    "Microcode",
+    "Validation"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/PROOF.bend#L1-L328"
+  },
+  "Laws": {
+   "deps": [
+    "Proofs",
+    "VMStep",
+    "Validation",
+    "Microcode",
+    "FleetTree"
+   ],
+   "url": "https://github.com/tangentstorm/b4/blob/6bf9a57996a8d7ddd9b07adff2e40375e12f0294/imp/bend/LAWS.bend#L1-L1120"
+  }
+ }
+}
