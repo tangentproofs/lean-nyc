@@ -1,0 +1,352 @@
+{
+ "generated_from": "https://lean.nyc/members (source: github.com/NYC-Lean/website)",
+ "projects": [
+  {
+   "slug": "numina-lean-agent",
+   "repo": "project-numina/numina-lean-agent",
+   "submodule": "projects/project-numina-numina-lean-agent",
+   "sha": "1c9af8a52e715f22fede766425ba3d3b95526132",
+   "members": [
+    {
+     "name": "Justin Asher",
+     "profile": "https://justinasher.me"
+    }
+   ],
+   "authors": "Project Numina",
+   "authorUrl": null,
+   "talk": "Numina Fuse (Jun 28, 2026)",
+   "talkUrl": "https://lean.nyc/blog/numina-fuse",
+   "description": "",
+   "license": null,
+   "explainer": false
+  },
+  {
+   "slug": "etc-fp-bitexact",
+   "repo": "evolvingtech/etc-fp-bitexact",
+   "submodule": "projects/evolvingtech-etc-fp-bitexact",
+   "sha": "036fffe0ab69ff3e80976cbacfa9bf4d530dd90b",
+   "members": [
+    {
+     "name": "Loren Abdulezer",
+     "profile": "https://github.com/evolvingtech"
+    }
+   ],
+   "authors": "Evolving Technologies Corporation (Loren Abdulezer)",
+   "authorUrl": "https://github.com/evolvingtech",
+   "talk": null,
+   "talkUrl": null,
+   "description": "Open, independently re-checkable IEEE 754 bit-exact verification substrate in Lean 4. Mathlib-free, solver-free re-verification.",
+   "license": "Apache-2.0",
+   "explainer": false
+  },
+  {
+   "slug": "leantex",
+   "repo": "kiranandcode/LeanTeX",
+   "submodule": "projects/kiranandcode-leantex",
+   "sha": "d267083acdc7799c301f31b11bad7ec2f035f88a",
+   "members": [
+    {
+     "name": "Kiran Gopinathan",
+     "profile": "https://kirancodes.me"
+    }
+   ],
+   "authors": "Kiran Gopinathan",
+   "authorUrl": "https://github.com/kiranandcode",
+   "talk": null,
+   "talkUrl": null,
+   "description": "Write LaTeX presentations directly from Lean4~",
+   "license": null,
+   "explainer": false
+  },
+  {
+   "slug": "alternating-analytic-counterexample",
+   "repo": "Deicyde/alternating-analytic-counterexample",
+   "submodule": "projects/deicyde-alternating-analytic-counterexample",
+   "sha": "2d40fc16353f447791a890bbe908178df361cd23",
+   "members": [
+    {
+     "name": "Jack McCarthy",
+     "profile": "https://jackmccarthy.org"
+    }
+   ],
+   "authors": "Jack McCarthy",
+   "authorUrl": "https://github.com/Deicyde",
+   "talk": "On the Alternating Bundle Problem",
+   "talkUrl": null,
+   "description": "Precomposition on continuous alternating maps is not analytic in characteristic 2: the paper and its Lean 4 / Mathlib formalization",
+   "license": "Apache-2.0",
+   "explainer": false
+  },
+  {
+   "slug": "lea",
+   "repo": "VIDA-NYU/Lea",
+   "submodule": "projects/vida-nyu-lea",
+   "sha": "a5924f6f15b980452731b6edfe00feee97791ab4",
+   "members": [
+    {
+     "name": "Shaswat Patel",
+     "profile": "https://shaswatpatel.github.io/"
+    },
+    {
+     "name": "Daniel Aarão Reis Arturi",
+     "profile": "https://darturi.github.io/"
+    }
+   ],
+   "authors": "VIDA-NYU (Shaswat Patel, Daniel Aarão Reis Arturi and contributors)",
+   "authorUrl": "https://github.com/VIDA-NYU",
+   "talk": "Lea: An Agent Backbone for Mathematician-Controlled Formalization in Lean",
+   "talkUrl": null,
+   "description": "",
+   "license": null,
+   "explainer": false
+  },
+  {
+   "slug": "lean-lr",
+   "repo": "ahuoguo/lean-lr",
+   "submodule": "projects/ahuoguo-lean-lr",
+   "sha": "6bb45cec4a3d7b42b3fd369e48cb279089465c00",
+   "members": [
+    {
+     "name": "Alex Bai",
+     "profile": "https://github.com/ahuoguo"
+    }
+   ],
+   "authors": "Alex Bai",
+   "authorUrl": "https://github.com/ahuoguo",
+   "talk": null,
+   "talkUrl": null,
+   "description": "",
+   "license": null,
+   "explainer": false
+  },
+  {
+   "slug": "expander-graphs",
+   "repo": "celioboulay/expander-graphs",
+   "submodule": "projects/celioboulay-expander-graphs",
+   "sha": "f977fcdab5ff18e20f796577c61a53add70f68f8",
+   "members": [
+    {
+     "name": "Celio Boulay",
+     "profile": "https://github.com/celioboulay"
+    }
+   ],
+   "authors": "Celio Boulay",
+   "authorUrl": "https://github.com/celioboulay",
+   "talk": null,
+   "talkUrl": null,
+   "description": "",
+   "license": "Apache-2.0",
+   "explainer": false
+  },
+  {
+   "slug": "cubing",
+   "repo": "rdavison/cubing",
+   "submodule": "projects/rdavison-cubing",
+   "sha": "ad5bdd080b93f301b863b6e3bfddae0770f007a9",
+   "members": [
+    {
+     "name": "Richard Davison",
+     "profile": "https://github.com/rdavison"
+    }
+   ],
+   "authors": "Richard Davison",
+   "authorUrl": "https://github.com/rdavison",
+   "talk": null,
+   "talkUrl": null,
+   "description": "An interactive cubing reference and trainer, formalised in Lean 4",
+   "license": null,
+   "explainer": false
+  },
+  {
+   "slug": "schiffer",
+   "repo": "jaumededios/Schiffer",
+   "submodule": "projects/jaumededios-schiffer",
+   "sha": "2938e277969c329caf154e48a3d8823f3635c7f1",
+   "members": [
+    {
+     "name": "Jaume de Dios Pont",
+     "profile": "https://jaume.dedios.cat/"
+    }
+   ],
+   "authors": "Jaume de Dios Pont",
+   "authorUrl": "https://github.com/jaumededios",
+   "talk": null,
+   "talkUrl": null,
+   "description": "Lean formalization and informal proof of a planar Schiffer counterexample",
+   "license": null,
+   "explainer": false
+  },
+  {
+   "slug": "lean-tic-tac-toe",
+   "repo": "Ericson2314/lean-tic-tac-toe",
+   "submodule": "projects/ericson2314-lean-tic-tac-toe",
+   "sha": "fe33a8290351097e49332cdecd0c8c98fb0ffa00",
+   "members": [
+    {
+     "name": "John Ericson",
+     "profile": "https://github.com/ericson2314"
+    }
+   ],
+   "authors": "John Ericson",
+   "authorUrl": "https://github.com/Ericson2314",
+   "talk": null,
+   "talkUrl": null,
+   "description": "",
+   "license": null,
+   "explainer": false
+  },
+  {
+   "slug": "cd4vt",
+   "repo": "kejace/cd4vt",
+   "submodule": "projects/kejace-cd4vt",
+   "sha": "d077071310aa4003c9aede69a007cea04438290f",
+   "members": [
+    {
+     "name": "Kristoffer Josefsson",
+     "profile": "http://github.com/kejace"
+    }
+   ],
+   "authors": "Kristoffer Josefsson",
+   "authorUrl": "https://github.com/kejace",
+   "talk": "Converse to the Four-Vertex Theorem",
+   "talkUrl": null,
+   "description": "A converse to the discrete four-vertex theorem",
+   "license": "Apache-2.0",
+   "explainer": false
+  },
+  {
+   "slug": "cedar-etna",
+   "repo": "alpaylan/cedar-etna",
+   "submodule": "projects/alpaylan-cedar-etna",
+   "sha": "ee3cb3a20790dd64458d9039e3325b1986a774f0",
+   "members": [
+    {
+     "name": "Alperen Keleş",
+     "profile": "https://alperenkeles.com/"
+    }
+   ],
+   "authors": "Alperen Keleş (built from cedar-policy/cedar-spec, Cedar Contributors)",
+   "authorUrl": "https://github.com/alpaylan",
+   "talk": null,
+   "talkUrl": null,
+   "description": "ETNA workload built from cedar-policy/cedar-spec: 9 mutation+property+witness atoms exercising Cedar-Lean's typechecker, validator, request-validator, level checker, and SymCC encoder.",
+   "license": "Apache-2.0",
+   "explainer": false
+  },
+  {
+   "slug": "inference_in_lean",
+   "repo": "SamuelLess/inference_in_lean",
+   "submodule": "projects/samuelless-inference_in_lean",
+   "sha": "1594d7ceddf23a0afe47d5867b1e4c58c0936e9f",
+   "members": [
+    {
+     "name": "Samuel Leßmann",
+     "profile": "https://github.com/samuelless"
+    }
+   ],
+   "authors": "Samuel Leßmann",
+   "authorUrl": "https://github.com/SamuelLess",
+   "talk": null,
+   "talkUrl": null,
+   "description": "Proof of soundness for resolution in first-order logic.",
+   "license": "GPL-3.0",
+   "explainer": false
+  },
+  {
+   "slug": "kripke-semantics",
+   "repo": "Boarders/kripke-semantics",
+   "submodule": "projects/boarders-kripke-semantics",
+   "sha": "95de19fdeced1b604636325a3561f2a20e505228",
+   "members": [
+    {
+     "name": "Callan McGill",
+     "profile": "https://boarders.github.io/"
+    }
+   ],
+   "authors": "Callan McGill",
+   "authorUrl": "https://github.com/Boarders",
+   "talk": null,
+   "talkUrl": null,
+   "description": "",
+   "license": null,
+   "explainer": false
+  },
+  {
+   "slug": "sampcert",
+   "repo": "leanprover/SampCert",
+   "submodule": "projects/leanprover-sampcert",
+   "sha": "a2c53bb5ff790e729e252958060699b7eff898b9",
+   "members": [
+    {
+     "name": "Markus de Medeiros",
+     "profile": "https://www.markusde.ca"
+    }
+   ],
+   "authors": "the SampCert authors (Markus de Medeiros and collaborators)",
+   "authorUrl": "https://github.com/leanprover/SampCert",
+   "talk": "SampCert: Verified Differential Privacy in Lean",
+   "talkUrl": null,
+   "description": "SampCert : Verified Differential Privacy",
+   "license": "Apache-2.0",
+   "explainer": false
+  },
+  {
+   "slug": "proofnet-verified",
+   "repo": "marcusm117/ProofNet-Verified",
+   "submodule": "projects/marcusm117-proofnet-verified",
+   "sha": "14879cb23e078d122adecd9578dd26a7304f753b",
+   "members": [
+    {
+     "name": "Marcus Min",
+     "profile": "https://marcusm117.github.io/"
+    }
+   ],
+   "authors": "Marcus Min and collaborators",
+   "authorUrl": "https://github.com/marcusm117",
+   "talk": "Autoformalization: A Tutorial for Everyone",
+   "talkUrl": null,
+   "description": "[NeurIPS 2026] Audited, Corrected, and Verified Version of The ProofNet Benchmark in Lean4",
+   "license": "Apache-2.0",
+   "explainer": false
+  },
+  {
+   "slug": "prismriver",
+   "repo": "lenianiva/Prismriver",
+   "submodule": "projects/lenianiva-prismriver",
+   "sha": "b54efbfaf259e9cf4d6186c8fb7998456821d568",
+   "members": [
+    {
+     "name": "Claire Wang",
+     "profile": "https://clairewang.net/"
+    }
+   ],
+   "authors": "Leni Aniva and Claire Wang",
+   "authorUrl": "https://github.com/lenianiva",
+   "talk": "Prismriver (Aug 16, 2026)",
+   "talkUrl": "https://lean.nyc/blog/prismriver",
+   "description": "(Mirror) A Music formalization library and DSL in Lean 4",
+   "license": "Apache-2.0",
+   "explainer": false
+  },
+  {
+   "slug": null,
+   "repo": "marwahaha/prove2me",
+   "url": "https://prove2.me",
+   "submodule": null,
+   "sha": null,
+   "members": [
+    {
+     "name": "Kunal Marwaha",
+     "profile": "https://kunalmarwaha.com/about"
+    }
+   ],
+   "authors": "Kunal Marwaha",
+   "authorUrl": "https://kunalmarwaha.com/about",
+   "talk": "Prove2Me and the formalization of Fermat's Last Theorem",
+   "talkUrl": null,
+   "description": "prove2.me, Kunal's featured project. No Lean repository for it is linked from lean.nyc, his home page or prove2.me; his linked GitHub has marwahaha/prove2me, which describes itself as the old version (TypeScript/Python, no Lean), so there is no Lean explainer.",
+   "license": null,
+   "explainer": false
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+[submodule "projects/project-numina-numina-lean-agent"]
+	path = projects/project-numina-numina-lean-agent
+	url = https://github.com/project-numina/numina-lean-agent
+[submodule "projects/evolvingtech-etc-fp-bitexact"]
+	path = projects/evolvingtech-etc-fp-bitexact
+	url = https://github.com/evolvingtech/etc-fp-bitexact
+[submodule "projects/kiranandcode-leantex"]
+	path = projects/kiranandcode-leantex
+	url = https://github.com/kiranandcode/LeanTeX
+[submodule "projects/deicyde-alternating-analytic-counterexample"]
+	path = projects/deicyde-alternating-analytic-counterexample
+	url = https://github.com/Deicyde/alternating-analytic-counterexample
+[submodule "projects/vida-nyu-lea"]
+	path = projects/vida-nyu-lea
+	url = https://github.com/VIDA-NYU/Lea
+[submodule "projects/ahuoguo-lean-lr"]
+	path = projects/ahuoguo-lean-lr
+	url = https://github.com/ahuoguo/lean-lr
+[submodule "projects/celioboulay-expander-graphs"]
+	path = projects/celioboulay-expander-graphs
+	url = https://github.com/celioboulay/expander-graphs
+[submodule "projects/rdavison-cubing"]
+	path = projects/rdavison-cubing
+	url = https://github.com/rdavison/cubing
+[submodule "projects/jaumededios-schiffer"]
+	path = projects/jaumededios-schiffer
+	url = https://github.com/jaumededios/Schiffer
+[submodule "projects/ericson2314-lean-tic-tac-toe"]
+	path = projects/ericson2314-lean-tic-tac-toe
+	url = https://github.com/Ericson2314/lean-tic-tac-toe
+[submodule "projects/kejace-cd4vt"]
+	path = projects/kejace-cd4vt
+	url = https://github.com/kejace/cd4vt
+[submodule "projects/alpaylan-cedar-etna"]
+	path = projects/alpaylan-cedar-etna
+	url = https://github.com/alpaylan/cedar-etna
+[submodule "projects/samuelless-inference_in_lean"]
+	path = projects/samuelless-inference_in_lean
+	url = https://github.com/SamuelLess/inference_in_lean
+[submodule "projects/boarders-kripke-semantics"]
+	path = projects/boarders-kripke-semantics
+	url = https://github.com/Boarders/kripke-semantics
+[submodule "projects/leanprover-sampcert"]
+	path = projects/leanprover-sampcert
+	url = https://github.com/leanprover/SampCert
+[submodule "projects/marcusm117-proofnet-verified"]
+	path = projects/marcusm117-proofnet-verified
+	url = https://github.com/marcusm117/ProofNet-Verified
+[submodule "projects/lenianiva-prismriver"]
+	path = projects/lenianiva-prismriver
+	url = https://github.com/lenianiva/Prismriver
