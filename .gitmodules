@@ -49,3 +49,6 @@
 [submodule "projects/lenianiva-prismriver"]
 	path = projects/lenianiva-prismriver
 	url = https://github.com/lenianiva/Prismriver
+[submodule "projects/celioboulay-origami-formalization"]
+	path = projects/celioboulay-origami-formalization
+	url = https://github.com/celioboulay/origami-formalization

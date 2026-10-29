@@ -1,0 +1,51 @@
+{
+ "slug": "origami",
+ "repo": "celioboulay/origami-formalization",
+ "submodule": "projects/celioboulay-origami-formalization",
+ "sha": "0c3c4cf920fb613a95f8d4982f3b6bbfbfac7289",
+ "members": [
+  "Celio Boulay"
+ ],
+ "authors": "Celio Boulay, Thomas Moulin, Alexander Chai and contributors (per the git history)",
+ "authorUrl": "https://github.com/celioboulay/origami-formalization",
+ "license": {
+  "spdx": null,
+  "name": "No licence file",
+  "file": null
+ },
+ "title": "TODO",
+ "brand": "TODO",
+ "h1": "TODO",
+ "lead": "TODO",
+ "desc": "TODO",
+ "startNote": "",
+ "sizeNote": "",
+ "agentCtx": "",
+ "roots": [],
+ "ns": "",
+ "headlines": [],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String"
+ ],
+ "gloss": {},
+ "headlineFiles": []
+}

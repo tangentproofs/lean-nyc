@@ -123,6 +123,26 @@
    "nodeCount": 44
   },
   {
+   "slug": "origami",
+   "repo": "celioboulay/origami-formalization",
+   "submodule": "projects/celioboulay-origami-formalization",
+   "sha": "0c3c4cf920fb613a95f8d4982f3b6bbfbfac7289",
+   "members": [
+    {
+     "name": "Celio Boulay",
+     "profile": "https://github.com/celioboulay"
+    }
+   ],
+   "authors": "Celio Boulay, Thomas Moulin, Alexander Chai and contributors",
+   "authorUrl": "https://github.com/celioboulay/origami-formalization",
+   "talk": null,
+   "talkUrl": null,
+   "description": "A Lean 4 formalization of Huzita–Hatori origami fold constructions, with a web interface that turns stacked folds into a Lean construction trace.",
+   "license": null,
+   "explainer": false,
+   "nodeCount": null
+  },
+  {
    "slug": "expander-graphs",
    "repo": "celioboulay/expander-graphs",
    "submodule": "projects/celioboulay-expander-graphs",
@@ -140,7 +160,8 @@
    "description": "",
    "license": "Apache-2.0",
    "explainer": true,
-   "nodeCount": 39
+   "nodeCount": 39,
+   "secondaryOf": "origami"
   },
   {
    "slug": "cubing",
