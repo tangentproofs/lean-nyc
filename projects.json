@@ -378,6 +378,26 @@
    "description": "Prove2Me, Kunal's featured project: a platform where a paper becomes a formalization mission of small Lean 4 statements that contributors and their agents prove, with verified results collected in Formalpedia. The explainer describes the site and its trust model (his linked GitHub repo marwahaha/prove2me is the old TypeScript version, not Lean).",
    "license": null,
    "explainer": false
+  },
+  {
+   "slug": null,
+   "repo": "tangentproofs/tangentproofs.github.io",
+   "url": "https://tangentproofs.github.io/",
+   "submodule": null,
+   "sha": null,
+   "members": [
+    {
+     "name": "Michal Wallace",
+     "profile": "https://tangentproofs.github.io/"
+    }
+   ],
+   "authors": "Michal Wallace",
+   "authorUrl": "https://tangentproofs.github.io/",
+   "talk": null,
+   "talkUrl": null,
+   "description": "Michal Wallace's own Lean projects and their explainers, at tangentproofs.github.io.",
+   "license": null,
+   "explainer": false
   }
  ]
 }
