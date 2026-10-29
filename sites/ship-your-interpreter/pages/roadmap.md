@@ -199,8 +199,7 @@ Nothing on this page was built or run. See [Trust](#/trust).
   witness memory, and that the traced boot is the machine's own. The scripts that checked them are not
   in the repository.
 - **The specification itself.** `BigStep` is the spec. The theorem says the binary matches *it*, not
-  that it matches anyone's informal idea of WHILE. The author has said in a talk that the semantics was
-  written with an LLM. A rule that copied a quirk of the C code would make the theorem true and the
+  that it matches anyone's informal idea of WHILE. A rule that copied a quirk of the C code would make the theorem true and the
   quirk "correct". A human must review Vsa/While/Semantics.lean to trust the meaning.
 - **Program assumptions.** `capacity` and `stack_admissible` are hypotheses. A program that needs more
   heap or stack than the image provides is outside the theorem. `endToEnd_checked` discharges them by

@@ -47,8 +47,7 @@ In the vendored `riscv-lean/` (about 246,000 lines):
    kernel-checked: that loading the ELF gives the witness's initial memory, and that the traced boot is the
    machine's own. The scripts that checked them and the witness generator are not in the repository.
 5. **The specification `BigStep`.** The theorem shows the binary agrees with this semantics. Whether the
-   semantics is the intended WHILE is a human judgement. The author has said in a talk that the semantics was
-   written with an LLM. See [Review](#/review).
+   semantics is the intended WHILE is a human judgement. See [Review](#/review).
 6. **iris-lean** (pinned at rev 740e2c4) for adequacy and the proof mode, plus Lean's kernel and its standard
    library.
 

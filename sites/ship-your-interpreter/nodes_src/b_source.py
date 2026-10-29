@@ -75,7 +75,7 @@ three outcomes exclusive.
     ["A status: normal, break, continue or return v", "A type", "An exit code"], 0,
     "Status (Vsa/While/Semantics.lean lines 42–43)."),
  ],
- caveats=["These rules are the specification. They were written to match the C interpreter, including details such as 64-bit wrapping, string concatenation display and the depth cap. Whether they match anyone's intended WHILE is a question for a human reader. The author has said in a talk that the semantics was LLM-written.",
+ caveats=["These rules are the specification. They were written to match the C interpreter, including details such as 64-bit wrapping, string concatenation display and the depth cap. Whether they match anyone's intended WHILE is a question for a human reader.",
           "Only the relations' shapes are summarised here. There are about 40 rules (Vsa/While/Semantics.lean lines 192–406)."])
 
 node("Vsa.While.BigStep",

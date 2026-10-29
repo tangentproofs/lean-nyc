@@ -37,7 +37,7 @@ concatenation (lines 131–141), again exactly as in the C.
 
 None of this is wrong. It is the honest specification of *this* interpreter. But the theorem cannot tell an
 intended behaviour from an accidental one: if the C did something surprising and the semantics copied it, the
-proof makes it "correct". The author has said in a talk that the semantics was LLM-written. A human reading of
+proof makes it "correct". A human reading of
 Vsa/While/Semantics.lean (about 420 lines) is the remaining check on what "correct" means. The type-safety
 and exclusivity theorems the project also proves (not covered here) are some evidence that the semantics is
 sensible.
