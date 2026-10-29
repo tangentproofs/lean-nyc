@@ -61,4 +61,4 @@ build iterations.
 
 ## Engine notes
 
-No engine bugs hit. The build prints "built _site/inference_in_lean" with 21 minor "no explainer yet" warnings.
+No engine bugs hit. The build prints "built _site/inference_in_lean" with 20 minor "no explainer yet" warnings.
