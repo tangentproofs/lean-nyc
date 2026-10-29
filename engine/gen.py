@@ -66,6 +66,7 @@ idx = f'''<!doctype html>
     <a href="#/">Proof graph</a>
     <a href="#/nodes">Nodes</a>
     {src_nav}
+    {'<a href="#/roadmap">Roadmap</a>' if os.path.exists(os.path.join(S, "pages", "roadmap.md")) else ""}
     <a href="#/review">Review</a>
     <a href="#/trust">Trust</a>
     <a href="#/about">About</a>

@@ -71,6 +71,7 @@ const routes = [
   [/^#\/start$/, startPage],
   [/^#\/review$/, () => mdPage("review")],
   [/^#\/trust$/, () => mdPage("trust")],
+  [/^#\/roadmap$/, () => mdPage("roadmap")], // optional pages/roadmap.md: a linked proof roadmap
   [/^#\/about$/, aboutPage],
 ];
 function route() {
