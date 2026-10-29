@@ -463,8 +463,8 @@
    "talk": null,
    "talkUrl": null,
    "license": null,
-   "explainer": false,
-   "nodeCount": null,
+   "explainer": true,
+   "nodeCount": 30,
    "own": true,
    "description": "Michal Wallace's own project: the Lean 4 implementation of the b4 virtual machine (imp/lean): interpreter, b4a assembler, machines joined by channels, step lemmas and a total runN, and a heap model for the mm allocator."
   },
