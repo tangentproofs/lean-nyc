@@ -1,0 +1,97 @@
+{
+ "slug": "cedar-etna",
+ "repo": "alpaylan/cedar-etna",
+ "submodule": "projects/alpaylan-cedar-etna",
+ "sha": "ee3cb3a20790dd64458d9039e3325b1986a774f0",
+ "members": [
+  "Alperen Keleş"
+ ],
+ "authors": "Alperen Keleş (built from cedar-policy/cedar-spec, Cedar Contributors)",
+ "authorUrl": "https://github.com/alpaylan",
+ "license": {
+  "spdx": "Apache-2.0",
+  "name": "Apache License 2.0",
+  "file": "LICENSE",
+  "notice": "NOTICE"
+ },
+ "title": "cedar-etna, explained",
+ "brand": "cedar-etna <em>explained</em>",
+ "h1": "Cedar's verified authorization spec, turned into a bug-finding benchmark",
+ "lead": "This repository is a fork of Cedar's Lean specification, the formal model behind Amazon's open-source authorization-policy language, with its machine-checked proofs: forbid always beats permit, nothing is allowed by default, validated policies can't hit type errors, and the SMT-based policy analyser is sound and complete. On top of that, Alperen Keleş's ETNA layer adds <strong>no new theorems</strong>. It adds twelve patches, each of which re-inserts a real historical bug into the code. Each patch comes with a runnable property that should catch it. Several of those bugs sit exactly where the proofs stop: the executable checks the soundness theorems assume, and the SMT-LIB text encoder and decoder that no theorem covers.",
+ "desc": "An unofficial plain-English tour of alpaylan/cedar-etna: the Cedar Contributors' Lean proofs of Cedar's authorization, validation and symbolic-compilation guarantees, plus Alperen Keleş's ETNA workload, which re-injects 12 historical cedar-spec bugs and tests for them with property-based testing.",
+ "startNote": "<p>For Cedar's guarantees, start with the two authorization headlines, <a href=\"#/node/Thm.forbid_trumps_permit\">forbid trumps permit</a> and <a href=\"#/node/Thm.default_deny\">default deny</a>, then <a href=\"#/node/Thm.validation_is_sound\">validation soundness</a> and <a href=\"#/node/Thm.verifyEquivalent_is_sound\">soundness of the equivalence check</a>. For what this fork adds, read <a href=\"#/node/Etna.PropertyResult\">what ETNA adds</a>, then <a href=\"#/node/Etna.property_symcc_pipeline_soundness\">testing the unverified SMT encoder</a> and <a href=\"#/node/Etna.property_validator_type_preservation\">testing typechecker soundness at runtime</a>.</p>",
+ "sizeNote": "About 98,800 lines of Lean in 355 files, almost all upstream Cedar (about 71,000 lines of proofs under Cedar/Thm). The ETNA additions are about 2,000 lines of Lean plus 12 patches. This site scans about 80 files around the headlines.",
+ "agentCtx": "A fork of cedar-policy/cedar-spec (Cedar's Lean 4 specification and proofs: authorization, validation, level slicing, symbolic compilation to SMT, verification queries) extended with an ETNA property-based-testing workload of 12 re-injectable historical bugs.",
+ "roots": [
+  "cedar-lean/Cedar/Spec",
+  "cedar-lean/Cedar/Data",
+  "cedar-lean/Cedar/Validation",
+  "cedar-lean/Cedar/SymCC",
+  "cedar-lean/Cedar/SymCC.lean",
+  "cedar-lean/Cedar/Thm/Authorization.lean",
+  "cedar-lean/Cedar/Thm/Typechecking.lean",
+  "cedar-lean/Cedar/Thm/Validation.lean",
+  "cedar-lean/Cedar/Thm/Validation/Validator.lean",
+  "cedar-lean/Cedar/Thm/Validation/Levels.lean",
+  "cedar-lean/Cedar/Thm/Validation/Typechecker.lean",
+  "cedar-lean/Cedar/Thm/Validation/RequestEntityValidation.lean",
+  "cedar-lean/Cedar/Thm/SymbolicCompilation.lean",
+  "cedar-lean/Cedar/Thm/Verification.lean",
+  "cedar-lean/Cedar/Thm/PolicySlice.lean",
+  "cedar-lean/Cedar/Thm/TPE.lean",
+  "cedar-lean/Cedar/Thm/Validation/Typechecker/Basic.lean",
+  "cedar-lean/Cedar/Thm/Validation/Typechecker/Types.lean",
+  "cedar-lean/Cedar/Thm/SymCC/Data/Basic.lean",
+  "cedar-lean/Cedar/Thm/SymCC/Data/Hierarchy.lean",
+  "cedar-lean/Cedar/Thm/SymCC/Verifier/VerifyIsAuthorized.lean",
+  "cedar-lean/Cedar/Thm/SymCC/Verifier/VerifyIsAuthorizedQueries.lean",
+  "cedar-lean/Cedar/Thm/SymCC/Compiler.lean",
+  "cedar-lean/Cedar/Thm/SymCC/Data/Ext.lean",
+  "cedar-lean/Cedar/Thm/Authorization/Authorizer.lean",
+  "cedar-lean/Cedar/Etna",
+  "cedar-lean/EtnaCedar"
+ ],
+ "ns": "Cedar.",
+ "headlines": [
+  "Thm.forbid_trumps_permit",
+  "Thm.default_deny",
+  "Thm.validation_is_sound",
+  "Thm.validate_with_level_is_sound",
+  "Thm.compile_is_sound",
+  "Thm.verifyEquivalent_is_sound"
+ ],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String"
+ ],
+ "gloss": {
+  "List": "Lean's <code>List α</code>: a finite ordered list. Cedar's <code>Policies</code> is a list of policies, and <code>policy ∈ policies</code> is list membership.",
+  "Bool": "Lean's two-valued type <code>true</code>/<code>false</code>. A policy is satisfied when it evaluates to <code>.ok true</code>.",
+  "Prop": "Lean's type of propositions. The predicates here (<code>IsExplicitlyForbidden</code>, <code>EvaluatesTo</code>) are Props, not runnable checks."
+ },
+ "headlineFiles": [
+  "cedar-lean/Cedar/Thm/Authorization.lean",
+  "cedar-lean/Cedar/Thm/Validation.lean",
+  "cedar-lean/Cedar/Thm/SymbolicCompilation.lean",
+  "cedar-lean/Cedar/Thm/Verification.lean",
+  "cedar-lean/Cedar/Etna/Properties.lean"
+ ]
+}
