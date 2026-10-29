@@ -72,7 +72,7 @@ version uses the concurrent weakest precondition and needs no such condition (li
 # ---------------------------------------------------------------- headline: ReLoC
 
 node("ProgramLogics.Reloc.refines_sound",
- "Headline: ReLoC refinement soundness (CONDITIONAL, condition unsatisfiable)",
+ "ReLoC refinement soundness (CONDITIONAL, condition appears unsatisfiable)",
  "Meant: if e refines e′ in the ReLoC relational logic, then e contextually refines e′. As written, the theorem also assumes no execution of any context around e ever forks, and some context does fork, so the statement is vacuous. CONDITIONAL, on a condition that cannot hold.",
  r"""## Plain English
 
