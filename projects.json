@@ -485,8 +485,8 @@
    "talk": null,
    "talkUrl": null,
    "license": null,
-   "explainer": false,
-   "nodeCount": null,
+   "explainer": true,
+   "nodeCount": 24,
    "own": true,
    "description": "Michal Wallace's own project: the b4 virtual machine written in Bend (imp/bend), running 16,384 machines in parallel, with a Mandelbrot demo and a live shell. A code tour.",
    "kind": "Bend"
