@@ -1,0 +1,69 @@
+{
+ "slug": "origami",
+ "repo": "celioboulay/origami-formalization",
+ "submodule": "projects/celioboulay-origami-formalization",
+ "sha": "0c3c4cf920fb613a95f8d4982f3b6bbfbfac7289",
+ "members": [
+  "Celio Boulay"
+ ],
+ "authors": "Celio Boulay, Thomas Moulin, Alexander Chai, wurtylex and contributors (per the git history)",
+ "authorUrl": "https://github.com/celioboulay/origami-formalization",
+ "license": {
+  "spdx": null,
+  "name": "No licence file",
+  "file": null
+ },
+ "title": "Origami formalization, explained",
+ "brand": "origami <em>explained</em>",
+ "h1": "Paper folding in Lean: the seven Huzita–Hatori fold axioms proved as theorems, and Haga's fold for thirds",
+ "lead": "This project models origami folds as reflections of the real plane and <strong>proves all seven Huzita–Hatori axioms as theorems</strong>: axioms 5 and 7 with exact conditions, and the cubic-solving axiom 6 (for crossing lines) via the intermediate value theorem. It then proves Haga's theorem: folding a square's corner onto the middle of the opposite edge marks a third. There is no <code>sorry</code>; the only Lean axioms postulate the points (and coordinates) of one generated example, and the headline Haga theorems do not use them. The Lean was <strong>not built</strong> for this site.",
+ "desc": "An unofficial plain-English tour of the Lean formalization of Huzita–Hatori origami by Celio Boulay, Thomas Moulin, Alexander Chai, wurtylex and others: lines in canonical form, folds as reflections, all seven fold axioms with sharpness results, and Haga's theorem for folding thirds.",
+ "startNote": "<p>Start with the objects: <a href=\"#/node/Line\">Line</a> (why lines are stored in a canonical form), <a href=\"#/node/Fold\">Fold</a> and the reflection <a href=\"#/node/f_places_p\">f_places_p</a>. Then read the headline <a href=\"#/node/huzita_2\">Axiom 2</a>, the simplest uniqueness proof, and <a href=\"#/node/huzita_6\">Axiom 6</a>, where a cubic equation appears. Finish with <a href=\"#/node/haga_first_theorem\">Haga's first theorem</a>, which uses Axiom 2 to fold a third, and its <a href=\"#/node/haga_gen_equation\">generalisation</a>.</p>",
+ "sizeNote": "About 1,250 lines of Lean in 9 files under Origami/lightweight_definitions/ (plus about 175 lines of an unimported paper-folding experiment, not covered).",
+ "agentCtx": "A Lean 4 + Mathlib formalization of Huzita–Hatori origami: points and canonical lines in the real plane, folds as reflections, the seven fold axioms proved as theorems with sharpness results, Haga's theorem, plus a Python/Rust web tool that turns picked folds into Lean.",
+ "roots": [
+  "Origami.lean",
+  "Origami/lightweight_definitions"
+ ],
+ "ns": "Origami.",
+ "headlines": [
+  "huzita_2",
+  "huzita_5_iff",
+  "huzita_6",
+  "huzita_7_iff",
+  "haga_first_theorem",
+  "haga_gen_equation"
+ ],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool",
+  "Classical"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String"
+ ],
+ "gloss": {
+  "Real.sqrt": "<code>Real.sqrt x</code> is the nonnegative square root of x (and 0 for negative x).",
+  "Classical.choose": "<code>Classical.choose h</code> picks some witness of an existence proof <code>h</code>, without saying which."
+ },
+ "headlineFiles": [
+  "Origami/lightweight_definitions/Huzita_axioms.lean",
+  "Origami/lightweight_definitions/Sharpness.lean",
+  "Origami/lightweight_definitions/Haga.lean"
+ ]
+}
