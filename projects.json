@@ -140,8 +140,8 @@
    "talkUrl": null,
    "description": "A Lean 4 formalization of Huzita–Hatori origami fold constructions, with a web interface that turns stacked folds into a Lean construction trace.",
    "license": null,
-   "explainer": false,
-   "nodeCount": null
+   "explainer": true,
+   "nodeCount": 33
   },
   {
    "slug": "expander-graphs",
@@ -241,7 +241,8 @@
    "talkUrl": null,
    "description": "A converse to the discrete four-vertex theorem",
    "license": "Apache-2.0",
-   "explainer": false
+   "explainer": true,
+   "nodeCount": 32
   },
   {
    "slug": "cedar-etna",
@@ -379,7 +380,8 @@
    "talkUrl": null,
    "description": "Prove2Me, Kunal's featured project: a platform where a paper becomes a formalization mission of small Lean 4 statements that contributors and their agents prove, with verified results collected in Formalpedia. The explainer describes the site and its trust model (his linked GitHub repo marwahaha/prove2me is the old TypeScript version, not Lean).",
    "license": null,
-   "explainer": false
+   "explainer": true,
+   "nodeCount": 17
   },
   {
    "slug": null,
