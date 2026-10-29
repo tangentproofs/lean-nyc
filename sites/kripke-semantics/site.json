@@ -1,0 +1,90 @@
+{
+ "slug": "kripke-semantics",
+ "repo": "Boarders/kripke-semantics",
+ "submodule": "projects/boarders-kripke-semantics",
+ "sha": "95de19fdeced1b604636325a3561f2a20e505228",
+ "members": [
+  "Callan McGill"
+ ],
+ "authors": "Callan McGill",
+ "authorUrl": "https://github.com/Boarders",
+ "license": {
+  "spdx": null,
+  "name": "No licence file",
+  "file": null
+ },
+ "title": "kripke-semantics, explained",
+ "brand": "kripke-semantics <em>explained</em>",
+ "h1": "Intuitionistic logic in Lean 4: soundness and completeness for Kripke and Beth semantics",
+ "lead": "Natural deduction for intuitionistic propositional logic proves <strong>exactly</strong> the sequents that hold in every Kripke model, and exactly those that hold in every Beth model. All four directions have complete-looking proofs with no <code>sorry</code>, and a three-world Kripke model shows that excluded middle is not provable. The Lean was not built for this site, and one line of the Beth code looks as if it may not compile.",
+ "desc": "An unofficial plain-English tour of Callan McGill's Lean 4 development of Kripke and Beth semantics for intuitionistic propositional logic: soundness, completeness via canonical models, the failure of excluded middle, and Beth frames via coverages and sieves.",
+ "startNote": "<p>Start with the <a href=\"#/node/Syntax.Tm\">formulas</a> and the <a href=\"#/node/Syntax.Pf\">proof rules</a>. Then read <a href=\"#/node/Kripke.Frame\">Kripke frames</a> and <a href=\"#/node/Kripke.at_world\">forcing</a>, and see them refute excluded middle in <a href=\"#/node/Kripke.ExcludedMiddle.em_not_provable\">em_not_provable</a>. The two big theorems are <a href=\"#/node/Kripke.soundness\">soundness</a> and <a href=\"#/node/Kripke.completeness\">completeness</a>. The Beth half starts at <a href=\"#/node/Beth.BethFrame\">Beth frames</a> and ends at <a href=\"#/node/Beth.Completeness.completeness\">Beth completeness</a>.</p>",
+ "sizeNote": "About 2,200 lines of Lean in 12 library files.",
+ "agentCtx": "A Lean 4 + Mathlib development of intuitionistic propositional logic (natural deduction) with soundness and completeness for Kripke semantics (canonical model via Zorn) and for generalised Beth semantics (sieves and coverages), plus Beth trees and examples.",
+ "roots": [
+  "Logic",
+  "Kripke",
+  "Beth"
+ ],
+ "ns": "",
+ "headlines": [
+  "Kripke.soundness",
+  "Kripke.completeness",
+  "Kripke.ExcludedMiddle.em_not_provable",
+  "Beth.soundness",
+  "Beth.Completeness.completeness"
+ ],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool",
+  "Classical",
+  "Preorder",
+  "Subtype",
+  "Or",
+  "And",
+  "Nonempty",
+  "TopologicalSpace",
+  "OrderDual"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String",
+  "Preorder",
+  "Set",
+  "Nonempty",
+  "Exists",
+  "True",
+  "False",
+  "Not",
+  "Or",
+  "And",
+  "IsChain",
+  "Maximal"
+ ],
+ "gloss": {
+  "Preorder": "<code>Preorder</code> (Mathlib): a relation ≤ that is reflexive (w ≤ w) and transitive. Unlike a partial order, two different points may each be ≤ the other.",
+  "Set": "<code>Set α</code>: a collection of elements of α, given by a membership predicate. It may be infinite.",
+  "Nonempty": "<code>Nonempty α</code>: the type α has at least one element.",
+  "Prop": "<code>Prop</code>: the type of propositions. A proof of one carries no data beyond the fact that it holds."
+ },
+ "headlineFiles": [
+  "Kripke/Soundness.lean",
+  "Kripke/Completeness.lean",
+  "Beth/Soundness.lean",
+  "Beth/Completeness.lean"
+ ]
+}
