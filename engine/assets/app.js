@@ -12,12 +12,14 @@ const MATHLIB_DOCS = (n) => `https://leanprover-community.github.io/mathlib4_doc
 const app = document.getElementById("app");
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 // "Main.lean lines 9–28" → the rendered, highlighted lines on this site (src/…), plus a small GitHub link.
-const srcLink = (d, cls = "small muted") => CFG.allowSource
+// Concept nodes (kind "concept", website explainers such as prove2me) have no Lean lines: link the page they describe.
+const conceptLink = (d, cls = "small muted") => `<span class="srclink ${cls}"><a href="${esc(d.url || CFG.snapshot?.url || "")}" target="_blank" rel="noopener">${esc((d.url || "").replace(/^https?:\/\//, "") || "the original site")} ↗</a></span>`;
+const srcLink = (d, cls = "small muted") => d.kind === "concept" ? conceptLink(d, cls) : CFG.allowSource
   ? `<span class="srclink ${cls}"><a href="${sourceUrl(d.file, d.line, d.endLine)}" title="${esc(d.file)}: open the highlighted source on this site">${esc(sourceLabel(d.file, d.line, d.endLine))}</a>
   <a class="gh" href="${githubSourceUrl(d.file, d.line, d.endLine)}" target="_blank" rel="noopener" title="the same lines on GitHub, at the pinned commit">GitHub ↗</a></span>`
   : `<span class="srclink ${cls}"><a href="${githubSourceUrl(d.file, d.line, d.endLine)}" target="_blank" rel="noopener" title="${esc(d.file)} on GitHub, at the pinned commit">${esc(sourceLabel(d.file, d.line, d.endLine))} on GitHub ↗</a></span>`;
 // Statement box: the verbatim Lean when the licence lets us reproduce it, else a pointer to the exact lines.
-const noSrc = (d) => `<div class="nosrc">Not reproduced here: <b>${esc(REPO)}</b> ${esc(CFG.license.short)}. Read the statement at ${srcLink(d, "")}</div>`;
+const noSrc = (d) => d.kind === "concept" ? `<div class="nosrc">A concept, not a Lean declaration: there is no formal statement. Described from ${conceptLink(d, "")}</div>` : `<div class="nosrc">Not reproduced here: <b>${esc(REPO)}</b> ${esc(CFG.license.short)}. Read the statement at ${srcLink(d, "")}</div>`;
 
 const [decls, nodes, proofs, pages] = await Promise.all([
   fetch("data/decls.json").then((r) => r.json()),
@@ -256,7 +258,7 @@ function agentPrompt(d) {
 The declarations were read from the source text, not a Lean build.
 
 Target: ${d.name}  (${d.kind})
-Source: ${githubSourceUrl(d.file, d.line, d.endLine)}
+Source: ${d.kind === "concept" ? d.url : githubSourceUrl(d.file, d.line, d.endLine)}
 Section variables in scope: ${d.variables.join(" ") || "(none)"}
 Formal statement:
 ${d.statement ?? "(not reproduced: read it at the Source URL above)"}
@@ -440,14 +442,14 @@ function listPage(fileFilter) {
   const file = fileFilter || q.get("file");
   const rows = decls.filter((d) => !file || d.module === file)
     .sort((a, b) => (!!nodes[b.id] - !!nodes[a.id]) || ((a.depth ?? 99) - (b.depth ?? 99)) || a.id.localeCompare(b.id));
-  const fileDecl = file && rows[0];
+  const fileDecl = file && rows[0]?.file && rows[0];
   app.innerHTML = `<h1>${file ? `Declarations in ${esc(file)}.lean` : "All declarations"}</h1>
     ${fileDecl ? `<p class="small"><a href="${CFG.allowSource ? sourceUrl(fileDecl.file) : githubSourceUrl(fileDecl.file)}">Read ${esc(file)}.lean${CFG.allowSource ? ", highlighted" : " on GitHub"} →</a></p>` : ""}
     <p class="muted">${Object.keys(nodes).length} with explainers, ${decls.length - Object.keys(nodes).length} awaiting one. ${file ? `<a href="#/nodes">show all</a>` : ""}
     Agents: the work list is <a href="data/needs-explainer.json">data/needs-explainer.json</a>.</p>
     <input type="text" id="flt" placeholder="filter…" style="max-width:20rem">
     <table class="node-list"><thead><tr><th>declaration</th><th>kind</th><th>status</th><th>distance from a headline</th><th>file</th></tr></thead>
-    <tbody>${rows.map((d) => `<tr data-id="${esc(d.id.toLowerCase())}"><td><a href="#/node/${encodeURIComponent(d.id)}">${esc(d.id)}</a></td><td><span class="pill kind-${d.kind}">${d.kind}</span></td><td><span class="pill st-${status(d.id)}">${statusLabel(d.id)}</span></td><td>${d.depth ?? "—"}</td><td class="small"><a class="muted" href="${CFG.allowSource ? sourceUrl(d.file, d.line, d.endLine) : githubSourceUrl(d.file, d.line, d.endLine)}" title="${esc(sourceLabel(d.file, d.line, d.endLine))}">${d.module}</a></td></tr>`).join("")}</tbody></table>`;
+    <tbody>${rows.map((d) => `<tr data-id="${esc(d.id.toLowerCase())}"><td><a href="#/node/${encodeURIComponent(d.id)}">${esc(d.id)}</a></td><td><span class="pill kind-${d.kind}">${d.kind}</span></td><td><span class="pill st-${status(d.id)}">${statusLabel(d.id)}</span></td><td>${d.depth ?? "—"}</td><td class="small">${d.kind === "concept" ? conceptLink(d, "muted") : `<a class="muted" href="${CFG.allowSource ? sourceUrl(d.file, d.line, d.endLine) : githubSourceUrl(d.file, d.line, d.endLine)}" title="${esc(sourceLabel(d.file, d.line, d.endLine))}">${d.module}</a>`}</td></tr>`).join("")}</tbody></table>`;
   document.getElementById("flt").oninput = (e) => {
     const v = e.target.value.toLowerCase();
     app.querySelectorAll("tbody tr").forEach((tr) => (tr.style.display = tr.dataset.id.includes(v) ? "" : "none"));
