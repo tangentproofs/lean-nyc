@@ -1,0 +1,49 @@
+{
+ "slug": "gromov",
+ "repo": "Aaron1011/gromov",
+ "submodule": "projects/aaron1011-gromov",
+ "sha": "8db79f13cf211b570e3116301d91379fbc01cf3e",
+ "members": [
+  "Aaron Hill"
+ ],
+ "authors": "Aaron Hill",
+ "authorUrl": "https://github.com/Aaron1011",
+ "license": {
+  "spdx": null,
+  "name": "No licence file",
+  "file": null
+ },
+ "title": "TODO",
+ "brand": "TODO",
+ "h1": "TODO",
+ "lead": "TODO",
+ "desc": "TODO",
+ "startNote": "",
+ "sizeNote": "",
+ "agentCtx": "",
+ "roots": [],
+ "ns": "",
+ "headlines": [],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String"
+ ]
+}

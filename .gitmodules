@@ -52,3 +52,12 @@
 [submodule "projects/celioboulay-origami-formalization"]
 	path = projects/celioboulay-origami-formalization
 	url = https://github.com/celioboulay/origami-formalization
+[submodule "projects/basisresearch-ship-your-interpreter"]
+	path = projects/basisresearch-ship-your-interpreter
+	url = https://github.com/BasisResearch/ship-your-interpreter
+[submodule "projects/aaron1011-gromov"]
+	path = projects/aaron1011-gromov
+	url = https://github.com/Aaron1011/gromov
+[submodule "projects/zetetic-dhruv-formal-learning-theory-kernel"]
+	path = projects/zetetic-dhruv-formal-learning-theory-kernel
+	url = https://github.com/Zetetic-Dhruv/formal-learning-theory-kernel

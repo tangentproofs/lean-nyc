@@ -13,29 +13,34 @@ const info = (p) => { const f = join(ROOT, "sites", p.slug || "-", "site.json");
 // Secondary projects (secondaryOf: <slug>) are listed on their primary's card instead of getting their own.
 const also = (p) => projects.filter((q) => q.secondaryOf === p.slug).map((q) => {
   const live = q.explainer && info(q);
-  return `<p class="meta also">Also explained: ${live ? `<a href="${q.slug}/">${esc(q.repo.split("/")[1])}</a> (${q.nodeCount ?? ""} nodes, unofficial)` : esc(q.repo.split("/")[1])} · upstream <a href="https://github.com/${esc(q.repo)}">github.com/${esc(q.repo)}</a> by ${esc(q.authors)}${q.sha ? ` · pinned at <code>${q.sha.slice(0, 7)}</code>` : ""} · ${q.license ? `licence ${esc(q.license)}` : "no licence file"}</p>`;
+  const nm = esc(q.repo.split("/")[1]);
+  if (q.tooling) return `<p class="meta also">Also: <a href="https://github.com/${esc(q.repo)}">${nm}</a> <span class="pill tool">tooling</span> ${esc(q.toolDesc || "")}${live ? ` · <a href="${q.slug}/">tool tour</a> (unofficial)` : ""} · by ${esc(q.authors)}${q.sha ? ` · pinned at <code>${q.sha.slice(0, 7)}</code>` : ""} · ${q.license ? `licence ${esc(q.license)}` : "no licence file"}</p>`;
+  return `<p class="meta also">Also explained: ${live ? `<a href="${q.slug}/">${nm}</a> (${q.nodeCount ?? ""} nodes, unofficial)` : nm} · upstream <a href="https://github.com/${esc(q.repo)}">github.com/${esc(q.repo)}</a> by ${esc(q.authors)}${q.sha ? ` · pinned at <code>${q.sha.slice(0, 7)}</code>` : ""} · ${q.license ? `licence ${esc(q.license)}` : "no licence file"}</p>`;
 }).join("");
 function card(p) {
   const s = info(p), live = p.explainer && s;
   const name = p.url ? new URL(p.url).host : p.repo.split("/")[1];
   const hue = [...name].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7) % 6;
-  const href = live ? `${p.slug}/` : p.demo ? p.demo.url : p.url || `https://github.com/${p.repo}`; // stubs link upstream until their explainer is live
+  const href = p.tooling ? `https://github.com/${p.repo}` : live ? `${p.slug}/` : p.demo ? p.demo.url : p.url || `https://github.com/${p.repo}`; // stubs link upstream until their explainer is live
   const who = p.members.map((m) => `<a href="${esc(m.profile)}">${esc(m.name)}</a>`).join(" &amp; ");
   const talk = p.talk ? ` · talk at Lean NYC: <a href="${esc(p.talkUrl || "https://lean.nyc/calendar")}">${esc(p.talk)}</a>` : "";
   const lic = p.license ? `licence ${esc(p.license)}` : p.slug ? "no licence file (source not reproduced)" : "";
-  const desc = (s && s.desc) || p.description;
-  const btns = [
+  const desc = p.tooling ? p.toolDesc : (s && s.desc) || p.description;
+  const extra = (p.sites || []).map((x) => `<a class="btn gh" href="${esc(x.url)}">${esc(x.label)} <span class="host">${esc(new URL(x.url).host)}</span> ↗</a>`).join("");
+  const btns = p.tooling ? [
+    `<a class="btn site" href="https://github.com/${esc(p.repo)}">${GH} <b>${esc(p.repo)}</b> <span class="host">the tool</span> →</a>`,
+    live ? `<a class="btn gh tour" href="${p.slug}/">Tool tour <span class="host">unofficial, ${p.nodeCount ?? ""} nodes</span></a>` : ""].join("") : [
     p.demo ? `<a class="btn site" href="${esc(p.demo.url)}"><b>Plain-English informalization</b> <span class="host">demo: ${esc(p.demo.label)}</span> →</a>`
       : live ? `<a class="btn site" href="${p.slug}/"><b>Plain-English informalization</b> <span class="host">unofficial explainer</span> →</a>`
       : p.slug ? `<span class="btn site soon"><b>Explainer in progress</b></span>`
       : p.url ? `<a class="btn site" href="${esc(p.url)}"><b>Project site</b> <span class="host">${esc(new URL(p.url).host)}</span> →</a>`
       : `<span class="btn site soon">Explainer in progress</span>`,
     p.url ? `<a class="btn gh" href="${esc(p.url)}">${esc(new URL(p.url).host)} ↗</a>`
-      : `<a class="btn gh" href="https://github.com/${esc(p.repo)}">${GH} ${esc(p.repo)}</a>`].join("");
+      : `<a class="btn gh" href="https://github.com/${esc(p.repo)}">${GH} ${esc(p.repo)}</a>`, extra].join("");
   return `<article class="card inf">
-  <a class="thumb ph c${hue}" href="${esc(href)}" aria-label="${esc(name)}"><span class="ph-name">${esc(name)}</span><span class="ph-note">${live ? `${p.nodeCount ?? ""} explained nodes` : p.demo ? "demo explainer" : p.slug ? "explainer in progress" : p.url ? "project site" : "explainer coming"}</span></a>
+  <a class="thumb ph c${hue}" href="${esc(href)}" aria-label="${esc(name)}"><span class="ph-name">${esc(name)}</span><span class="ph-note">${p.tooling ? "tooling" : live ? `${p.nodeCount ?? ""} explained nodes` : p.demo ? "demo explainer" : p.slug ? "explainer in progress" : p.url ? "project site" : "explainer coming"}</span></a>
   <div class="body">
-    <h3><a href="${esc(href)}">${esc(name)}</a> <span class="pill">${p.url ? "site" : "Lean"}</span>${p.slug && !live ? ` <span class="pill soon">explainer in progress</span>` : ""}</h3>
+    <h3><a href="${esc(href)}">${esc(name)}</a> <span class="pill">${p.url ? "site" : "Lean"}</span>${p.tooling ? ` <span class="pill tool">tooling</span>` : ""}${p.slug && !live ? ` <span class="pill soon">explainer in progress</span>` : ""}</h3>
     <p class="who">${who}</p>
     <p>${esc(desc)}</p>
     <p class="meta">Upstream: ${p.url ? `<a href="${esc(p.url)}">${esc(new URL(p.url).host)}</a>` : `<a href="https://github.com/${esc(p.repo)}">github.com/${esc(p.repo)}</a>`} by ${esc(p.authors)}${p.sha ? ` · pinned at <code>${p.sha.slice(0, 7)}</code>` : ""}${lic ? ` · ${lic}` : ""}${talk}</p>

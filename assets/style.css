@@ -67,3 +67,5 @@ html, body { overflow-x: hidden; }
   .others a { display: inline-block; min-height: 44px; line-height: 44px; }
   .meta { line-height: 2.4; } .meta a, .who a, .optout a, .fan a, .tag a { padding: 12px 2px; }
 }
+.pill.tool { background: #23303a; color: #9fd3ff; border: 1px solid #4b7fa8; }
+.btn.tour { font-size: .82rem; }

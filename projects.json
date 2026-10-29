@@ -19,7 +19,9 @@
    "description": "",
    "license": null,
    "explainer": true,
-   "nodeCount": 29
+   "nodeCount": 29,
+   "tooling": true,
+   "toolDesc": "An agent framework (mostly Python and prompts) that drives Claude Code to write Lean 4 proofs; its Lean is a small set of Putnam 2025 and miniF2F problem statements left as sorry."
   },
   {
    "slug": "etc-fp-bitexact",
@@ -42,6 +44,26 @@
    "nodeCount": 25
   },
   {
+   "slug": "ship-your-interpreter",
+   "repo": "BasisResearch/ship-your-interpreter",
+   "submodule": "projects/basisresearch-ship-your-interpreter",
+   "sha": "fb07094cff916318c34b07494a7d739f1e53989b",
+   "members": [
+    {
+     "name": "Kiran Gopinathan",
+     "profile": "https://kirancodes.me"
+    }
+   ],
+   "authors": "Kiran Gopinathan (Basis Research)",
+   "authorUrl": "https://github.com/BasisResearch/ship-your-interpreter",
+   "talk": "Ship Your Interpreters: Validating LLM-Written Semantics against the Binary (Oct 25, 2026)",
+   "talkUrl": "https://lean.nyc/calendar",
+   "description": "A Lean 4 proof that a WHILE-language interpreter, written in C and compiled to bare-metal RISC-V, halts with a program's output exactly when the big-step semantics derives it, run on the Sail-generated RISC-V model.",
+   "license": null,
+   "explainer": false,
+   "nodeCount": null
+  },
+  {
    "slug": "leantex",
    "repo": "kiranandcode/LeanTeX",
    "submodule": "projects/kiranandcode-leantex",
@@ -59,7 +81,10 @@
    "description": "Write LaTeX presentations directly from Lean4~",
    "license": null,
    "explainer": true,
-   "nodeCount": 22
+   "nodeCount": 22,
+   "tooling": true,
+   "toolDesc": "A Lean 4 library for writing LaTeX Beamer slides as Lean code: a LaTeX-like DSL, raw LaTeX literals and a generator that builds the PDF. It contains no theorems.",
+   "secondaryOf": "ship-your-interpreter"
   },
   {
    "slug": "alternating-analytic-counterexample",
@@ -103,7 +128,9 @@
    "description": "",
    "license": null,
    "explainer": true,
-   "nodeCount": 33
+   "nodeCount": 33,
+   "tooling": true,
+   "toolDesc": "A Lean 4 theorem-proving agent with a web UI and an Overleaf extension (mostly Python and TypeScript); its Lean is sample agent output, test fixtures and a vendored copy of SafeVerify."
   },
   {
    "slug": "lean-lr",
@@ -239,12 +266,18 @@
    ],
    "authors": "Kristoffer Josefsson",
    "authorUrl": "https://github.com/kejace",
-   "talk": "Converse to the Four-Vertex Theorem",
+   "talk": "Converse to the Four-Vertex Theorem (Oct 4, 2026)",
    "talkUrl": null,
    "description": "A converse to the discrete four-vertex theorem",
    "license": "Apache-2.0",
    "explainer": true,
-   "nodeCount": 32
+   "nodeCount": 32,
+   "sites": [
+    {
+     "label": "Project site",
+     "url": "https://kejace.github.io/cd4vt/"
+    }
+   ]
   },
   {
    "slug": "cedar-etna",
@@ -344,7 +377,9 @@
    "description": "[NeurIPS 2026] Audited, Corrected, and Verified Version of The ProofNet Benchmark in Lean4",
    "license": "Apache-2.0",
    "explainer": true,
-   "nodeCount": 19
+   "nodeCount": 19,
+   "tooling": true,
+   "toolDesc": "A benchmark: 367 undergraduate exercises stated in Lean 4 with proofs left as sorry for AI provers, plus an audit that corrected the older ProofNet statements (205 of 367 had been mis-stated)."
   },
   {
    "slug": "prismriver",
@@ -410,6 +445,46 @@
     "url": "https://tangentproofs.github.io/rakesieve/learn/",
     "label": "rakesieve"
    }
+  },
+  {
+   "slug": "gromov",
+   "repo": "Aaron1011/gromov",
+   "submodule": "projects/aaron1011-gromov",
+   "sha": "8db79f13cf211b570e3116301d91379fbc01cf3e",
+   "members": [
+    {
+     "name": "Aaron Hill",
+     "profile": "https://github.com/Aaron1011"
+    }
+   ],
+   "authors": "Aaron Hill",
+   "authorUrl": "https://github.com/Aaron1011",
+   "talk": "Formalizing Gromov's theorem on groups of polynomial growth in Lean (Aug 30, 2026)",
+   "talkUrl": "https://lean.nyc/blog/formalizing-gromovs-theorem",
+   "description": "A Lean 4 formalization of Gromov's theorem: a finitely generated group has polynomial growth exactly when it is virtually nilpotent.",
+   "license": null,
+   "explainer": false,
+   "nodeCount": null
+  },
+  {
+   "slug": "formal-learning-theory",
+   "repo": "Zetetic-Dhruv/formal-learning-theory-kernel",
+   "submodule": "projects/zetetic-dhruv-formal-learning-theory-kernel",
+   "sha": "cdc4fc3df3d4f9487c7f91872487a8eff120d188",
+   "members": [
+    {
+     "name": "Dhruv Gupta",
+     "profile": "https://zetesislabs.com/dhruv.html"
+    }
+   ],
+   "authors": "Dhruv Gupta (Zetesis Labs)",
+   "authorUrl": "https://github.com/Zetetic-Dhruv/formal-learning-theory-kernel",
+   "talk": "Formal Learning Theory in Lean 4 (Oct 18, 2026)",
+   "talkUrl": "https://lean.nyc/blog/formal-learning-theory",
+   "description": "A Lean 4 formalization of the fundamental theorem of statistical learning: PAC learnability and the VC dimension.",
+   "license": "Apache-2.0",
+   "explainer": false,
+   "nodeCount": null
   }
  ],
  "others": [
