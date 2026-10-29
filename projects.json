@@ -395,9 +395,13 @@
    "authorUrl": "https://tangentproofs.github.io/",
    "talk": null,
    "talkUrl": null,
-   "description": "Michal Wallace's own Lean projects and their explainers, at tangentproofs.github.io.",
+   "description": "Michal Wallace's own Lean projects. The demo is the rakesieve explainer, in the same format as the explainers here; more are at tangentproofs.github.io.",
    "license": null,
-   "explainer": false
+   "explainer": false,
+   "demo": {
+    "url": "https://tangentproofs.github.io/rakesieve/learn/",
+    "label": "rakesieve"
+   }
   }
  ]
 }
