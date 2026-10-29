@@ -57,7 +57,8 @@
    "talkUrl": null,
    "description": "Write LaTeX presentations directly from Lean4~",
    "license": null,
-   "explainer": false
+   "explainer": true,
+   "nodeCount": 22
   },
   {
    "slug": "alternating-analytic-counterexample",
@@ -178,7 +179,8 @@
    "talkUrl": null,
    "description": "Lean formalization and informal proof of a planar Schiffer counterexample",
    "license": null,
-   "explainer": false
+   "explainer": true,
+   "nodeCount": 38
   },
   {
    "slug": "lean-tic-tac-toe",
