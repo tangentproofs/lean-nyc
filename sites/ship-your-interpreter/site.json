@@ -1,0 +1,70 @@
+{
+ "slug": "ship-your-interpreter",
+ "repo": "BasisResearch/ship-your-interpreter",
+ "submodule": "projects/basisresearch-ship-your-interpreter",
+ "sha": "fb07094cff916318c34b07494a7d739f1e53989b",
+ "members": [
+  "Kiran Gopinathan"
+ ],
+ "authors": "Kiran Gopinathan (Basis Research)",
+ "authorUrl": "https://github.com/BasisResearch/ship-your-interpreter",
+ "license": {
+  "spdx": null,
+  "name": "No licence file",
+  "file": null
+ },
+ "title": "Ship your interpreter, explained",
+ "brand": "ship-your-interpreter <em>explained</em>",
+ "h1": "Ship your interpreter: a proof that a compiled C interpreter's RISC-V binary implements its language's semantics",
+ "lead": "Kiran Gopinathan's project proves, in Lean 4, a theorem about the <strong>shipped binary</strong> of a small interpreter written in C. Start the RISC-V machine (the Sail ISA model) at the interpreter's <code>interp_run</code>, with a WHILE program's AST in memory. Then it halts with exit code 0 and output <em>out</em> <strong>exactly when</strong> the program's big-step semantics gives <em>out</em>, and if it runs forever the program has no result. No C semantics or compiler is trusted. What <em>is</em> trusted: the Sail model, the ELF's bytes, the loading hypothesis (which assumes the parser already ran and that heap and stack suffice) and the semantics itself.",
+ "desc": "An unofficial plain-English roadmap of Basis Research's ship-your-interpreter: a Lean 4 proof, through an Iris program logic over the Sail RISC-V model, that a compiled C interpreter's ELF implements a big-step semantics of WHILE.",
+ "startNote": "<p>Read the headline <a href=\"#/node/Vsa.Sim.EndToEnd.endToEnd_refinement\">endToEnd_refinement</a>, then the <a href=\"#/roadmap\">Roadmap</a>, which walks the proof from the WHILE semantics and the RISC-V model, through the memory layout and the Iris program logic, to the theorem. For the boundaries, see <a href=\"#/node/Vsa.Refine.Loaded\">Loaded</a> (what is assumed) and <a href=\"#/trust\">Trust</a>.</p>",
+ "sizeNote": "About 175,700 lines of project Lean in 822 files (Vsa/ about 66,000, VsaIris/ about 109,400), plus about 246,000 lines of vendored, mostly generated Sail RISC-V model in riscv-lean/ (not scanned here).",
+ "agentCtx": "ship-your-interpreter (Basis Research, Kiran Gopinathan): a Lean 4 proof that the RV64 ELF of a WHILE interpreter written in C, run on the Sail-generated RISC-V model from the entry of interp_run, refines an inductive big-step semantics of WHILE; built with an Iris-style machine program logic.",
+ "roots": [
+  "Vsa",
+  "VsaIris",
+  "Vsa.lean",
+  "VsaIris.lean",
+  "VsaBoot.lean"
+ ],
+ "ns": "",
+ "headlines": [
+  "Vsa.Sim.EndToEnd.endToEnd_refinement",
+  "Vsa.Sim.EndToEnd.endToEnd_trichotomy",
+  "Vsa.Sim.Boot.while_halts",
+  "Vsa.Sim.EndToEnd.endToEnd_checked"
+ ],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String"
+ ],
+ "gloss": {
+  "String": "Text. Program output is a string: everything print and println wrote, or the machine's console contents.",
+  "Nat": "The natural numbers 0, 1, 2, …. Exit codes, addresses and step counters are natural numbers."
+ },
+ "headlineFiles": [
+  "VsaIris/Interp/EndToEnd.lean",
+  "VsaIris/Interp/EndToEndTrichotomy.lean",
+  "VsaIris/Interp/EndToEndChecked.lean",
+  "Vsa/Sim/Boot/EndToEnd.lean"
+ ]
+}
