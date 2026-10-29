@@ -1,0 +1,51 @@
+{
+ "slug": "leantex",
+ "repo": "kiranandcode/LeanTeX",
+ "submodule": "projects/kiranandcode-leantex",
+ "sha": "d267083acdc7799c301f31b11bad7ec2f035f88a",
+ "members": [
+  "Kiran Gopinathan"
+ ],
+ "authors": "Kiran Gopinathan",
+ "authorUrl": "https://github.com/kiranandcode",
+ "license": {
+  "spdx": null,
+  "name": "No licence file",
+  "file": null
+ },
+ "title": "TODO",
+ "brand": "TODO",
+ "h1": "TODO",
+ "lead": "TODO",
+ "desc": "TODO",
+ "startNote": "",
+ "sizeNote": "",
+ "agentCtx": "",
+ "roots": [],
+ "ns": "",
+ "headlines": [],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String"
+ ],
+ "gloss": {},
+ "headlineFiles": []
+}

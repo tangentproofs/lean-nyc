@@ -1,0 +1,51 @@
+{
+ "slug": "prismriver",
+ "repo": "lenianiva/Prismriver",
+ "submodule": "projects/lenianiva-prismriver",
+ "sha": "b54efbfaf259e9cf4d6186c8fb7998456821d568",
+ "members": [
+  "Claire Wang"
+ ],
+ "authors": "Leni Aniva and Claire Wang",
+ "authorUrl": "https://github.com/lenianiva",
+ "license": {
+  "spdx": "Apache-2.0",
+  "name": "Apache License 2.0",
+  "file": "LICENSE"
+ },
+ "title": "TODO",
+ "brand": "TODO",
+ "h1": "TODO",
+ "lead": "TODO",
+ "desc": "TODO",
+ "startNote": "",
+ "sizeNote": "",
+ "agentCtx": "",
+ "roots": [],
+ "ns": "",
+ "headlines": [],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String"
+ ],
+ "gloss": {},
+ "headlineFiles": []
+}

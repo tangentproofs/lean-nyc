@@ -1,0 +1,51 @@
+{
+ "slug": "proofnet-verified",
+ "repo": "marcusm117/ProofNet-Verified",
+ "submodule": "projects/marcusm117-proofnet-verified",
+ "sha": "14879cb23e078d122adecd9578dd26a7304f753b",
+ "members": [
+  "Marcus Min"
+ ],
+ "authors": "Marcus Min and collaborators",
+ "authorUrl": "https://github.com/marcusm117",
+ "license": {
+  "spdx": "Apache-2.0",
+  "name": "Apache License 2.0",
+  "file": "LICENSE"
+ },
+ "title": "TODO",
+ "brand": "TODO",
+ "h1": "TODO",
+ "lead": "TODO",
+ "desc": "TODO",
+ "startNote": "",
+ "sizeNote": "",
+ "agentCtx": "",
+ "roots": [],
+ "ns": "",
+ "headlines": [],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String"
+ ],
+ "gloss": {},
+ "headlineFiles": []
+}

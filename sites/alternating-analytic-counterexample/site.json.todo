@@ -1,0 +1,51 @@
+{
+ "slug": "alternating-analytic-counterexample",
+ "repo": "Deicyde/alternating-analytic-counterexample",
+ "submodule": "projects/deicyde-alternating-analytic-counterexample",
+ "sha": "2d40fc16353f447791a890bbe908178df361cd23",
+ "members": [
+  "Jack McCarthy"
+ ],
+ "authors": "Jack McCarthy",
+ "authorUrl": "https://github.com/Deicyde",
+ "license": {
+  "spdx": "Apache-2.0",
+  "name": "Apache License 2.0",
+  "file": "LICENSE"
+ },
+ "title": "TODO",
+ "brand": "TODO",
+ "h1": "TODO",
+ "lead": "TODO",
+ "desc": "TODO",
+ "startNote": "",
+ "sizeNote": "",
+ "agentCtx": "",
+ "roots": [],
+ "ns": "",
+ "headlines": [],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String"
+ ],
+ "gloss": {},
+ "headlineFiles": []
+}

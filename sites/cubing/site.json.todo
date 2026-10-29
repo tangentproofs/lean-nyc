@@ -1,0 +1,51 @@
+{
+ "slug": "cubing",
+ "repo": "rdavison/cubing",
+ "submodule": "projects/rdavison-cubing",
+ "sha": "ad5bdd080b93f301b863b6e3bfddae0770f007a9",
+ "members": [
+  "Richard Davison"
+ ],
+ "authors": "Richard Davison",
+ "authorUrl": "https://github.com/rdavison",
+ "license": {
+  "spdx": null,
+  "name": "No licence file",
+  "file": null
+ },
+ "title": "TODO",
+ "brand": "TODO",
+ "h1": "TODO",
+ "lead": "TODO",
+ "desc": "TODO",
+ "startNote": "",
+ "sizeNote": "",
+ "agentCtx": "",
+ "roots": [],
+ "ns": "",
+ "headlines": [],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String"
+ ],
+ "gloss": {},
+ "headlineFiles": []
+}

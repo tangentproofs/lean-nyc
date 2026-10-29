@@ -38,6 +38,8 @@ already exist. Your slug, upstream repo, submodule and pinned commit are given i
 
 ## What to produce, in `sites/<slug>/`
 
+Start by renaming `site.json.todo` to `site.json`. CI builds only sites that have a `site.json`. If the upstream README states a licence that has no LICENSE file, **don't** change `license` yourself. Report it in NOTES.md and the coordinator decides.
+
 - **`site.json`.** The coordinator filled in `slug`, `repo`, `submodule`, `sha`, `members`, `authors`,
   `authorUrl` and `license`. You fill in:
   - `title`: "<Project>, explained".

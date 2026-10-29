@@ -1,0 +1,51 @@
+{
+ "slug": "numina-lean-agent",
+ "repo": "project-numina/numina-lean-agent",
+ "submodule": "projects/project-numina-numina-lean-agent",
+ "sha": "1c9af8a52e715f22fede766425ba3d3b95526132",
+ "members": [
+  "Justin Asher"
+ ],
+ "authors": "Project Numina",
+ "authorUrl": null,
+ "license": {
+  "spdx": null,
+  "name": "No licence file",
+  "file": null
+ },
+ "title": "TODO",
+ "brand": "TODO",
+ "h1": "TODO",
+ "lead": "TODO",
+ "desc": "TODO",
+ "startNote": "",
+ "sizeNote": "",
+ "agentCtx": "",
+ "roots": [],
+ "ns": "",
+ "headlines": [],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String"
+ ],
+ "gloss": {},
+ "headlineFiles": []
+}

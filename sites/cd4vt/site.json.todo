@@ -1,0 +1,51 @@
+{
+ "slug": "cd4vt",
+ "repo": "kejace/cd4vt",
+ "submodule": "projects/kejace-cd4vt",
+ "sha": "d077071310aa4003c9aede69a007cea04438290f",
+ "members": [
+  "Kristoffer Josefsson"
+ ],
+ "authors": "Kristoffer Josefsson",
+ "authorUrl": "https://github.com/kejace",
+ "license": {
+  "spdx": "Apache-2.0",
+  "name": "Apache License 2.0",
+  "file": "LICENSE"
+ },
+ "title": "TODO",
+ "brand": "TODO",
+ "h1": "TODO",
+ "lead": "TODO",
+ "desc": "TODO",
+ "startNote": "",
+ "sizeNote": "",
+ "agentCtx": "",
+ "roots": [],
+ "ns": "",
+ "headlines": [],
+ "mathlibNamespaces": [
+  "Nat",
+  "Int",
+  "List",
+  "Finset",
+  "Set",
+  "Function",
+  "Real",
+  "Fin",
+  "Option",
+  "Bool"
+ ],
+ "mathlibNames": [
+  "Nat",
+  "Int",
+  "List",
+  "Fin",
+  "Prop",
+  "Option",
+  "Bool",
+  "String"
+ ],
+ "gloss": {},
+ "headlineFiles": []
+}
